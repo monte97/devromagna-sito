@@ -214,6 +214,31 @@ check_task5() {
   assert_file "$OUT/eventi/index.xml"
 }
 
+check_task6() {
+  local eventi_dir="$ROOT/content/eventi"
+  local cartelle voci_live id
+  voci_live=32
+
+  cartelle="$(find "$eventi_dir" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
+  [ "$cartelle" -ge "$voci_live" ] \
+    || fail "cartelle in content/eventi ($cartelle) meno delle voci della lista live ($voci_live)"
+
+  for id in \
+    303780376 303426360 301598446 296506014 296333460 293340671 292723436 \
+    291862771 291027334 289709131 286896133 286413278 269579666 265866894 \
+    260307622 258490013 257990206 256601308 255195925 250403502 249113255 \
+    247896848 247045707 245313829 245283762 242114775 240838433 241083496 \
+    238853473 239382597 239110404 238796165; do
+    grep -Rq --include='index.md' -- "events/$id/" "$eventi_dir" \
+      || fail "URL Meetup dell'evento $id assente da content/eventi"
+  done
+
+  grep -Rq -- "Il tuo collega più produttivo scrive test inutili" "$eventi_dir" \
+    || fail "evento 'Il tuo collega più produttivo scrive test inutili' assente"
+  grep -Rq -- "Web Components: a che punto siamo?" "$eventi_dir" \
+    || fail "evento 'Web Components: a che punto siamo?' assente"
+}
+
 bash "$ROOT/scripts/fixture-oggi.sh"
 build_site
 check_global
@@ -222,5 +247,6 @@ check_task3
 check_task4
 check_task4_vuoto
 check_task5
+check_task6
 
 printf 'PASS\n'
