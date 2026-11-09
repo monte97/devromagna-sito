@@ -7,6 +7,7 @@
 {{- $righe = sort $righe "ultimo" "desc" -}}
 <header class="hero evento-hero">
   <div class="container">
+    <p class="tag">Community · {{ len $righe }} speaker</p>
     <h1>{{ .Title }}</h1>
     <p class="hero-sottotitolo">{{ .Description }} {{ len $righe }} persone sono salite sul palco: vuoi essere la prossima? <a href="{{ site.Params.sessionize }}">Proponi un talk</a>.</p>
   </div>

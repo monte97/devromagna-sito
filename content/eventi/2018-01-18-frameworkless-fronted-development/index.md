@@ -7,6 +7,7 @@ abstract: "Nello sviluppo Frontend a ogni nuovo progetto scegliamo il framework 
 meetup_url: "https://www.meetup.com/devromagna/events/245313829/"
 speakers:
   - "Francesco Strazzullo"
+address: "Piazza Sanguinetti, 106"
 ---
 
 - Data: 18 Gennaio 2018

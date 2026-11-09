@@ -7,6 +7,7 @@
 {{- $righe = sort $righe "ultimo" "desc" -}}
 <header class="hero evento-hero">
   <div class="container">
+    <p class="tag">Grazie · {{ len $righe }} aziende e spazi</p>
     <h1>{{ .Title }}</h1>
     <p class="hero-sottotitolo">{{ .Description }} Hai uno spazio per una serata? <a href="{{ "#ospitaci" | relURL }}">Ospitaci</a>.</p>
   </div>

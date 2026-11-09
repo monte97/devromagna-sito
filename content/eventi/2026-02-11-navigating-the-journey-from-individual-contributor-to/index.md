@@ -7,4 +7,12 @@ abstract: "Il passaggio da individual contributor a technical leader è un perco
 meetup_url: "https://www.meetup.com/devromagna/events/313034212/"
 speakers:
   - "Simone D'Amico"
+address: "Via san Giovanni Bosco, 1"
+map_url: "https://www.google.com/maps/search/?api=1&query=44.283570,11.883275"
 ---
+
+Il passaggio da individual contributor a technical leader è un percorso di profonda trasformazione, ricco di sfide e opportunità di crescita.
+In questo talk condividerò la mia evoluzione personale, gli ostacoli affrontati, gli errori commessi e le lezioni apprese lungo il cammino. Scopriremo perché essere un ottimo software engineer non significa automaticamente essere un ottimo leader e quali competenze è necessario sviluppare per colmare questo divario e guidare i team con successo.
+Unisciti a me per trovare ispirazione e acquisire maggiore consapevolezza nel tuo percorso di leadership.
+
+Speaker: Simone D'Amico

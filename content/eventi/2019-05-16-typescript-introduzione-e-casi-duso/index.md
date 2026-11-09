@@ -9,6 +9,7 @@ speakers:
   - "Massimo Artizzu"
 slides: "slide.pdf"
 repo: "https://github.com/DevRomagna/eventi/tree/master/20190516-TypeScript-introduzione-e-casi-d%27uso"
+address: "Via Selice, 51"
 ---
 
 - Data: 16 Maggio 2019

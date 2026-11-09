@@ -12,16 +12,16 @@
         {{ with $meta }}<p class="evento-meta">{{ . }}</p>{{ end }}
       </div>
     </header>
+    {{- $foto := slice -}}
+    {{- range .Resources.ByType "image" }}{{ if not (strings.HasPrefix .Name "locandina") }}{{ $foto = $foto | append . }}{{ end }}{{ end -}}
+    {{- $locandina := .Resources.GetMatch "locandina.*" -}}
+    {{- $ospite := index (.GetTerms "host") 0 -}}
     <section class="evento-body">
-      <div class="container">
-        {{ if eq $stato "in-arrivo" }}
-          {{ with .Params.abstract }}<p class="evento-abstract">{{ . }}</p>{{ end }}
-          {{ with .Params.meetup_url }}<p class="evento-cta"><a class="btn" href="{{ . }}">Iscriviti su Meetup</a></p>{{ end }}
-        {{ else }}
-          {{ $imgs := .Resources.ByType "image" }}
-          {{ with $imgs }}
+      <div class="container evento-griglia">
+        <div class="evento-principale">
+          {{ if and (eq $stato "tenuto") $foto }}
             <div class="gallery evento-gallery">
-              {{ range . }}
+              {{ range $foto }}
                 {{ if strings.HasSuffix .Name ".svg" }}
                   <a href="{{ .RelPermalink }}"><img src="{{ .RelPermalink }}" alt="" width="1200" height="800" loading="lazy"></a>
                 {{ else }}
@@ -39,21 +39,48 @@
               {{ with .Params.abstract }}<p class="evento-abstract">{{ . }}</p>{{ end }}
             {{ end }}
           </div>
-          {{ with .Params.attendees }}<p class="evento-presenti">{{ . }} presenti</p>{{ end }}
-          {{ if or .Params.slides .Params.repo .Params.video }}
-            <div class="evento-azioni">
-              {{ with .Params.slides }}
-                {{ $href := . }}
-                {{ if not (or (hasPrefix . "http://") (hasPrefix . "https://")) }}
-                  {{ with $.Resources.Get . }}{{ $href = .RelPermalink }}{{ end }}
+          {{ if eq $stato "in-arrivo" }}
+            {{ with .Params.meetup_url }}<p class="evento-cta"><a class="btn" href="{{ . }}">Iscriviti su Meetup</a></p>{{ end }}
+          {{ else }}
+            {{ with .Params.attendees }}<p class="evento-presenti">{{ . }} presenti</p>{{ end }}
+            {{ if or .Params.slides .Params.repo .Params.video }}
+              <div class="evento-azioni">
+                {{ with .Params.slides }}
+                  {{ $href := . }}
+                  {{ if not (or (hasPrefix . "http://") (hasPrefix . "https://")) }}
+                    {{ with $.Resources.Get . }}{{ $href = .RelPermalink }}{{ end }}
+                  {{ end }}
+                  <a class="btn btn-soft" href="{{ $href }}">Slide</a>
                 {{ end }}
-                <a class="btn btn-soft" href="{{ $href }}">Slide</a>
-              {{ end }}
-              {{ with .Params.repo }}<a class="btn btn-soft" href="{{ . }}">Repo</a>{{ end }}
-              {{ with .Params.video }}<a class="btn btn-soft" href="{{ . }}">Video</a>{{ end }}
-            </div>
+                {{ with .Params.repo }}<a class="btn btn-soft" href="{{ . }}">Repo</a>{{ end }}
+                {{ with .Params.video }}<a class="btn btn-soft" href="{{ . }}">Video</a>{{ end }}
+              </div>
+            {{ end }}
           {{ end }}
-        {{ end }}
+        </div>
+        <aside class="evento-lato">
+          {{ with $locandina }}
+            {{ $img := .Resize "800x webp q82" }}
+            <img class="evento-locandina" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="Locandina dell'evento">
+          {{ end }}
+          <dl class="evento-info">
+            <dt>Quando</dt>
+            <dd>{{ time.Format ":date_full" .Date }}, ore {{ .Date.Format "15:04" }}</dd>
+            {{ if or .Params.host .Params.city }}
+            <dt>Dove</dt>
+            <dd>
+              {{- with $ospite }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ else }}{{ with $.Params.host }}{{ . }}{{ end }}{{ end -}}
+              {{- with .Params.address }}<br>{{ . }}{{ end -}}
+              {{- with .Params.city }}<br>{{ . }}{{ end -}}
+              {{- with .Params.map_url }}<br><a href="{{ . }}">Apri la mappa</a>{{ end -}}
+            </dd>
+            {{ end }}
+            {{ with .Params.meetup_url }}
+            <dt>Su Meetup</dt>
+            <dd><a href="{{ . }}">Pagina dell'evento</a></dd>
+            {{ end }}
+          </dl>
+        </aside>
       </div>
     </section>
   </article>

@@ -11,6 +11,7 @@
   {{- $tenuti = sort $tenuti "Date" "desc" -}}
   <header class="hero evento-hero">
     <div class="container">
+      <p class="tag">Archivio · {{ len (where site.RegularPages "Section" "eventi") }} serate dal 2017</p>
       <h1>{{ .Title | default "Eventi" }}</h1>
       <p>Gli incontri passati e quelli in arrivo della community DevRomagna.</p>
     </div>

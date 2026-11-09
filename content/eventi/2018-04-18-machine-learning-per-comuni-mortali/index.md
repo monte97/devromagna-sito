@@ -8,6 +8,7 @@ meetup_url: "https://www.meetup.com/devromagna/events/249113255/"
 speakers:
   - "Marco Radossi"
 slides: "slide.pdf"
+address: "Piazza Sanguinetti, 106"
 ---
 
 - Data: 18 Aprile 2018

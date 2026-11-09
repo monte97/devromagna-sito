@@ -1031,7 +1031,7 @@ strong {
 }
 
 /* Respiro prima del footer: le sezioni hanno padding solo in alto per impilarsi in home */
-main > :last-child:not(.evento-body) {
+main > :last-child:not(.evento-body):not(.evento) {
   padding-bottom: clamp(56px, 8vw, 96px);
 }
 
@@ -1079,4 +1079,60 @@ main > :last-child:not(.evento-body) {
 .poster-evento:hover,
 .poster-evento:focus-visible {
   text-decoration-thickness: 2px;
+}
+
+/* Pagina evento: testo a sinistra, locandina e informazioni a destra */
+.evento-griglia {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+.evento-testo { max-width: 68ch; }
+.evento-testo p { text-wrap: pretty; }
+.evento-lato {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 20px;
+}
+.evento-locandina {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px -18px rgba(31, 20, 22, .45);
+}
+.evento-info {
+  margin: 0;
+  padding: 22px;
+  border-radius: 18px;
+  background: var(--pink);
+}
+.evento-info dt {
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--magenta-dark);
+}
+.evento-info dt:first-child { margin-top: 0; }
+.evento-info dd {
+  margin: 4px 0 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.evento-info a { color: var(--ink); }
+@media (max-width: 900px) {
+  .evento-griglia { grid-template-columns: 1fr; }
+  .evento-lato { position: static; }
+}
+
+/* Etichetta sopra il titolo: identica su tutte le pagine interne (span o p) */
+.hero .tag {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--magenta);
+  background: var(--white);
 }

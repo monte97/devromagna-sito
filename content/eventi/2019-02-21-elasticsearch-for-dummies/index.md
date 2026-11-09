@@ -7,6 +7,7 @@ abstract: "Sviluppare API con interfaccia REST. Archiviare i dati per future ric
 meetup_url: "https://www.meetup.com/devromagna/events/257990206/"
 speakers:
   - "Simone Gentili"
+address: "Via Galielo Galilei 6"
 ---
 
- - [sensorario/docker-elasticsearch](https://github.com/sensorario/docker-elasticsearch)
+- [sensorario/docker-elasticsearch](https://github.com/sensorario/docker-elasticsearch)

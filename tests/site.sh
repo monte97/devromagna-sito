@@ -331,6 +331,18 @@ check_menu_attivo() {
   [ -z "$(nav_attiva "$OUT/index.html")" ] || fail "menu: nessuna voce va marcata in home"
 }
 
+check_evento_arricchito() {
+  local page="$OUT/eventi/2026-05-13-il-tuo-collega-piu-produttivo-scrive-test-inutili/index.html"
+  # locandina a lato, non nella galleria delle foto della serata
+  assert_contains "$page" "evento-locandina"
+  tr -d '\n' < "$page" | grep -o 'evento-gallery.*evento-testo' | grep -q 'locandina' && fail "la locandina e' finita nella galleria"
+  assert_contains "$page" "Via san Giovanni Bosco"
+  assert_contains "$page" "ospiti/fondazione-banca-del-monte"
+  assert_contains "$page" "Apri la mappa"
+  # descrizione completa anche dove prima c'era solo l'abstract
+  assert_contains "$OUT/eventi/2025-10-30-web-components-a-che-punto-siamo/index.html" "evento-info"
+}
+
 bash "$ROOT/scripts/fixture-oggi.sh"
 build_site
 check_global
@@ -342,5 +354,6 @@ check_task5
 check_task6
 check_speaker_ospiti
 check_menu_attivo
+check_evento_arricchito
 
 printf 'PASS\n'

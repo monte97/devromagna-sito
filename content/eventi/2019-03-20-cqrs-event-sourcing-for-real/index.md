@@ -5,6 +5,8 @@ city: "Rimini"
 abstract: "Durante la serata parleremo di concetti base su CQRS/ES fino ad arrivare a vedere un caso d'uso. L'obiettivo è quello di far comprendere le basi dei due pattern e quando sono utili da utilizzare. Esplorando CQRS/ES, apriremo alcune parentesi sul Domain Driven Design, un approccio per la risoluzione di problemi complessi che pone l'accento sull'evoluzione del modello di dominio e su come tale..."
 meetup_url: "https://www.meetup.com/devromagna/events/258490013/"
 slides: "slide.pdf"
+address: "Viale Principe Amedeo, 7"
+map_url: "https://www.google.com/maps/search/?api=1&query=44.066086,12.571594"
 ---
 
 Slide in pdf.

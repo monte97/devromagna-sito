@@ -1,12 +1,7 @@
 {{- /* Riga "Città · con Speaker" dell'evento, con i nomi linkati alla pagina dello speaker. */ -}}
 {{- $nomi := slice -}}
-{{- range .Params.speakers -}}
-  {{- $p := site.GetPage (printf "/speakers/%s" (urlize .)) -}}
-  {{- if $p -}}
-    {{- $nomi = $nomi | append (printf "<a class=\"link-speaker\" href=\"%s\">%s</a>" $p.RelPermalink (. | htmlEscape)) -}}
-  {{- else -}}
-    {{- $nomi = $nomi | append (. | htmlEscape) -}}
-  {{- end -}}
+{{- range .GetTerms "speakers" -}}
+  {{- $nomi = $nomi | append (printf "<a class=\"link-speaker\" href=\"%s\">%s</a>" .RelPermalink (.Title | htmlEscape)) -}}
 {{- end -}}
 {{- $parti := slice -}}
 {{- with .Params.city -}}

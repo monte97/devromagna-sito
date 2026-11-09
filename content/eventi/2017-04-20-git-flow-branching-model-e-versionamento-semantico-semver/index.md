@@ -7,6 +7,7 @@ abstract: "Nella prima parte racconcentrero' sopratutto git flow quale flusso di
 meetup_url: "https://www.meetup.com/devromagna/events/239110404/"
 speakers:
   - "Simone Gentili"
+address: "Via Galielo Galilei 6"
 ---
 
 - Data: 20 Aprile 2017 

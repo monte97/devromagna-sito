@@ -7,6 +7,7 @@ abstract: "Go è un linguaggio di programmazione open source sviluppato da Googl
 meetup_url: "https://www.meetup.com/devromagna/events/242114775/"
 speakers:
   - "Simone Gentili"
+address: "Via Galielo Galilei 6"
 ---
 
 - Data: 11 Novembre 2017 
