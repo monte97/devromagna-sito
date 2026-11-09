@@ -3,6 +3,7 @@ locale = "it-IT"
 timeZone = "Europe/Rome"
 title = "DevRomagna"
 disableKinds = ["taxonomy", "term"]
+buildFuture = true
 
 [params]
   subtitle = "Developer Community della Romagna"

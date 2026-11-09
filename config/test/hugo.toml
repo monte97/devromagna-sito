@@ -1,4 +1,9 @@
+buildFuture = true
+
 [module]
   [[module.mounts]]
     source = "tests/fixtures/content"
+    target = "content"
+  [[module.mounts]]
+    source = "tests/fixtures/tmp/content"
     target = "content"

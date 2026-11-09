@@ -11,7 +11,7 @@ fail() {
 
 build_site() {
   OUT="$(mktemp -d)"
-  trap 'rm -rf "$OUT"' EXIT
+  trap 'rm -rf "$OUT" "$ROOT/tests/fixtures/tmp"' EXIT
   ( cd "$ROOT" && hugo --gc --minify --environment test -d "$OUT" ) \
     || fail "build del sito fallita"
 }
@@ -98,8 +98,46 @@ check_task2() {
   assert_contains "$index" "Entra su Meetup"
 }
 
+check_task3() {
+  local page imgs oggi
+
+  page="$OUT/eventi/2099-01-15-futuro/index.html"
+  assert_file "$page"
+  assert_contains "$page" "In arrivo"
+  assert_contains "$page" "15 gen 2099"
+  assert_contains "$page" "Iscriviti su Meetup"
+  assert_not_contains "$page" "Tenuto"
+
+  page="$OUT/eventi/2020-03-26-passato-completo/index.html"
+  assert_file "$page"
+  assert_contains "$page" "Tenuto"
+  assert_contains "$page" "26 mar 2020"
+  imgs="$(grep -o '<img' "$page" | wc -l | tr -d ' ')"
+  [ "$imgs" -ge 2 ] || fail "attese almeno due immagini della galleria in $page"
+  assert_contains "$page" "slide.pdf"
+  assert_contains "$page" "database a grafo"
+  assert_not_contains "$page" "Iscriviti su Meetup"
+
+  page="$OUT/eventi/2018-05-25-passato-nudo/index.html"
+  assert_file "$page"
+  assert_contains "$page" "Introduzione a Docker"
+  assert_contains "$page" "Tenuto"
+  assert_not_contains "$page" "Speaker"
+  assert_not_contains "$page" "gallery"
+  assert_not_contains "$page" "Slide"
+  assert_not_contains "$page" "undefined"
+  assert_not_contains "$page" "<p></p>"
+
+  oggi="$(TZ=Europe/Rome date +%Y-%m-%d)"
+  page="$OUT/eventi/$oggi-oggi/index.html"
+  assert_file "$page"
+  assert_contains "$page" "In arrivo"
+}
+
+bash "$ROOT/scripts/fixture-oggi.sh"
 build_site
 check_global
 check_task2
+check_task3
 
 printf 'PASS\n'

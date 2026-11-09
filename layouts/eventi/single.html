@@ -1,0 +1,52 @@
+{{ define "main" }}
+  {{- $stato := partial "evento-stato.html" . -}}
+  {{- $data := time.Format ":date_medium" .Date -}}
+  {{- $meta := partial "evento-meta.html" . -}}
+  <article class="evento">
+    <header class="hero evento-hero">
+      <div class="container">
+        <span class="tag">
+          {{- if eq $stato "tenuto" }}Tenuto{{ else }}In arrivo{{ end }} · {{ $data -}}
+        </span>
+        <h1>{{ .Title }}</h1>
+        {{ with $meta }}<p class="evento-meta">{{ . }}</p>{{ end }}
+      </div>
+    </header>
+    <section class="evento-body">
+      <div class="container">
+        {{ if eq $stato "in-arrivo" }}
+          {{ with .Params.abstract }}<p class="evento-abstract">{{ . }}</p>{{ end }}
+          {{ with .Params.meetup_url }}<p class="evento-cta"><a class="btn" href="{{ . }}">Iscriviti su Meetup</a></p>{{ end }}
+        {{ else }}
+          {{ $imgs := .Resources.ByType "image" }}
+          {{ with $imgs }}
+            <div class="gallery evento-gallery">
+              {{ range . }}
+                {{ $small := .Resize "600x" }}
+                {{ $big := .Resize "1600x" }}
+                <a href="{{ $big.RelPermalink }}"><img src="{{ $small.RelPermalink }}" alt="" width="{{ $small.Width }}" height="{{ $small.Height }}" loading="lazy"></a>
+              {{ end }}
+            </div>
+          {{ end }}
+          <div class="evento-testo">
+            {{ .Content }}
+          </div>
+          {{ with .Params.attendees }}<p class="evento-presenti">{{ . }} presenti</p>{{ end }}
+          {{ if or .Params.slides .Params.repo .Params.video }}
+            <div class="evento-azioni">
+              {{ with .Params.slides }}
+                {{ $href := . }}
+                {{ if not (or (hasPrefix . "http://") (hasPrefix . "https://")) }}
+                  {{ with $.Resources.Get . }}{{ $href = .RelPermalink }}{{ end }}
+                {{ end }}
+                <a class="btn btn-soft" href="{{ $href }}">Slide</a>
+              {{ end }}
+              {{ with .Params.repo }}<a class="btn btn-soft" href="{{ . }}">Repo</a>{{ end }}
+              {{ with .Params.video }}<a class="btn btn-soft" href="{{ . }}">Video</a>{{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+  </article>
+{{ end }}

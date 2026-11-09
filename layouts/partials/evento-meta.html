@@ -1,0 +1,14 @@
+{{- $nomi := slice -}}
+{{- range .Params.speakers -}}
+  {{- with .name -}}
+    {{- $nomi = $nomi | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $parti := slice -}}
+{{- with .Params.city -}}
+  {{- $parti = $parti | append . -}}
+{{- end -}}
+{{- with $nomi -}}
+  {{- $parti = $parti | append (printf "con %s" (delimit . ", ")) -}}
+{{- end -}}
+{{- return (delimit $parti " · ") -}}

@@ -2,4 +2,5 @@ public/
 resources/_gen/
 .hugo_build.lock
 .claude/oc-runs/
+tests/fixtures/tmp/
 .DS_Store
