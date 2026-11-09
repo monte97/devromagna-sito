@@ -148,7 +148,12 @@ check_task4() {
   assert_contains "$index" ".NET Foundation"
   assert_contains "$index" "Invoicetronic"
   assert_not_contains "$index" "incotriamo"
-  assert_contains "$index" "2099-01-15-futuro"
+  # Il riquadro "Prossimo evento" mostra la serata di oggi (fixture-oggi), non quella dopo
+  local box
+  box="$(tr -d '\n' < "$index" | grep -o 'home-prossimo.*' | sed 's#</section>.*##')"
+  printf '%s' "$box" | grep -q -- '-oggi/' || fail "il prossimo evento in home non e' la serata di oggi"
+  printf '%s' "$box" | grep -q -- '2099-01-15-futuro' && fail "il prossimo evento in home salta la serata di oggi"
+  return 0
 }
 
 check_task4_vuoto() {
