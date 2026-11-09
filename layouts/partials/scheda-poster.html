@@ -13,9 +13,15 @@
 <article class="poster">
   <span class="poster-num" aria-hidden="true">{{ $n }}</span>
   <div class="poster-testa">
+    {{- $logo := eq .unita "serata" }}
     {{- with .immagine }}{{ with resources.Get . }}
-    {{- $img := .Fill "160x160 Center webp q80" }}
+    {{- if $logo }}
+      {{- $src := . }}{{ if ne .MediaType.SubType "svg" }}{{ $src = .Fit "320x160 webp q85" }}{{ end }}
+    <span class="poster-logo"><img src="{{ $src.RelPermalink }}" alt="" loading="lazy"></span>
+    {{- else }}
+      {{- $img := .Fill "160x160 Center webp q80" }}
     <img class="poster-foto" src="{{ $img.RelPermalink }}" width="80" height="80" alt="" loading="lazy">
+    {{- end }}
     {{- end }}{{ end }}
     <p class="poster-kicker">{{ $kicker }}</p>
     <h2><a class="poster-link" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>

@@ -1034,3 +1034,36 @@ strong {
 main > :last-child:not(.evento-body) {
   padding-bottom: clamp(56px, 8vw, 96px);
 }
+
+/* Voce del menu della sezione corrente */
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+}
+.poster-logo,
+.term-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 16px;
+}
+.poster-logo {
+  width: 132px;
+  height: 72px;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+}
+.term-logo {
+  width: 220px;
+  height: 120px;
+  margin: 20px 0 8px;
+  padding: 16px 22px;
+}
+.poster-logo img,
+.term-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

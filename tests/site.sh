@@ -293,6 +293,11 @@ check_speaker_ospiti() {
   [ "$pos_lugo" -gt "$pos_mado" ] || fail "ospiti non ordinati per ultima serata"
   assert_contains "$page" "poster"
   assert_contains "$page" "7 serate dal 2017"
+  # Logo dai dati dove c'è, niente logo dove manca
+  tr -d '\n' < "$OUT/ospiti/index.html" | grep -o 'poster-logo.\{0,200\}' | grep -q 'ospiti/abilio' || fail "logo di Abilio assente nella scheda"
+  assert_contains "$OUT/ospiti/abilio-s.p.a./index.html" "term-logo"
+  assert_contains "$OUT/ospiti/abilio-s.p.a./index.html" "abilio.com"
+  assert_not_contains "$OUT/ospiti/studio-mado/index.html" "term-logo"
   page="$OUT/ospiti/studio-mado/index.html"
   assert_file "$page"
   assert_contains "$page" "7 serate"
@@ -314,6 +319,16 @@ check_speaker_ospiti() {
   [ "$pos_partner" -gt "$pos_passati" ] || fail "gli sponsor devono stare prima degli incontri passati"
 }
 
+check_menu_attivo() {
+  # La voce del menu della sezione in cui sei è marcata con aria-current
+  nav_attiva() { tr -d '\n' < "$1" | grep -o '<nav class=site-nav.*</nav>' | grep -o '<a[^>]*aria-current=page[^>]*>[^<]*' | sed 's/.*>//'; }
+  [ "$(nav_attiva "$OUT/eventi/index.html")" = "Eventi" ] || fail "menu: Eventi non attivo su /eventi/"
+  [ "$(nav_attiva "$OUT/eventi/2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire/index.html")" = "Eventi" ] || fail "menu: Eventi non attivo su un evento"
+  [ "$(nav_attiva "$OUT/speaker/nicola-iarocci/index.html")" = "Speaker" ] || fail "menu: Speaker non attivo su uno speaker"
+  [ "$(nav_attiva "$OUT/ospiti/index.html")" = "Chi ci ha ospitato" ] || fail "menu: Chi ci ha ospitato non attivo su /ospiti/"
+  [ -z "$(nav_attiva "$OUT/index.html")" ] || fail "menu: nessuna voce va marcata in home"
+}
+
 bash "$ROOT/scripts/fixture-oggi.sh"
 build_site
 check_global
@@ -324,5 +339,6 @@ check_task4_vuoto
 check_task5
 check_task6
 check_speaker_ospiti
+check_menu_attivo
 
 printf 'PASS\n'

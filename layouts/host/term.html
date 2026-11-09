@@ -5,8 +5,9 @@
 <header class="hero evento-hero">
   <div class="container">
     <p class="tag">Ci ha ospitato · {{ len $serate }} {{ cond (eq (len $serate) 1) "serata" "serate" }}</p>
-    {{- with $info.logo }}{{ with resources.Get . }}{{ $img := .Fill "240x240 Center webp q80" }}
-    <img class="term-foto" src="{{ $img.RelPermalink }}" width="120" height="120" alt="">
+    {{- with $info.logo }}{{ with resources.Get . }}
+      {{- $src := . }}{{ if ne .MediaType.SubType "svg" }}{{ $src = .Fit "480x240 webp q85" }}{{ end }}
+    <span class="term-logo"><img src="{{ $src.RelPermalink }}" alt="Logo di {{ $.Title }}"></span>
     {{- end }}{{ end }}
     <h1>{{ .Title }}</h1>
     <p class="hero-sottotitolo">{{ with $info.descrizione }}{{ . }}{{ else }}{{ with $citta }}{{ . }}. {{ end }}Grazie per aver aperto le porte a DevRomagna.{{ end }}</p>

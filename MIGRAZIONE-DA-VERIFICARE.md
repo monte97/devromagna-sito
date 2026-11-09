@@ -28,4 +28,5 @@ Voci emerse durante la migrazione dal sito storico che richiedono una conferma p
 - Evento "Designing a chat with your data agent on Databricks: Architecture and Guardrails" (2026-10-26) presente solo fra gli eventi Meetup, senza materiali ne' voce nella pagina storica.
 - 20 serate senza speaker nel frontmatter (Meetup non riportava una riga "Speaker:"): completare il campo `speakers` a mano, servono anche per la pagina Speaker.
 - Pagina "Chi ci ha ospitato": costruita dal campo `host` (la sede su Meetup); controllare i nomi delle aziende e unire eventuali doppioni.
-- Link LinkedIn e Sessionize degli speaker (`data/speaker.yaml`) e sito/LinkedIn di chi ci ha ospitato (`data/ospiti.yaml`): file vuoti, da compilare (nessun link inventato).
+- Link LinkedIn e Sessionize degli speaker (`data/speaker.yaml`): file vuoto, da compilare (nessun link inventato).
+- Loghi degli ospiti: 12 su 18 presi dai siti ufficiali. Mancano Studio Mado, Iprel Progetti (sul sito solo un logo bianco piccolo), Ideato (ideato.it rimanda a Claranet), Cittattiva e Dinamo Coworking (sito non trovato con certezza) e Gellify (solo il simbolo bianco): da chiedere a loro. Da confermare che Abilio, Coopolis, W3Make e Gellify siano le stesse realta' che ci hanno ospitato.

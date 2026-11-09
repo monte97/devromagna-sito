@@ -1,15 +1,20 @@
+{{- $tipo := .Type -}}
+{{- $voci := slice
+  (dict "nome" "Eventi" "url" ("eventi/" | relURL) "tipo" "eventi")
+  (dict "nome" "Speaker" "url" ("speaker/" | relURL) "tipo" "speakers")
+  (dict "nome" "Chi ci ha ospitato" "url" ("ospiti/" | relURL) "tipo" "host")
+  (dict "nome" "Chi siamo" "url" ("#chi-siamo" | relURL) "tipo" "")
+  (dict "nome" "Proponi un talk" "url" ("#proponi" | relURL) "tipo" "") -}}
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="{{ site.Home.RelPermalink }}">
+    <a class="brand" href="{{ site.Home.RelPermalink }}"{{ if .IsHome }} aria-current="page"{{ end }}>
       <img class="brand-logo" src="{{ "img/logo.png" | relURL }}" alt="" width="44" height="44">
       <span>devRomagna</span>
     </a>
     <nav class="site-nav" aria-label="Navigazione principale">
-      <a href="{{ "eventi/" | relURL }}">Eventi</a>
-      <a href="{{ "speaker/" | relURL }}">Speaker</a>
-      <a href="{{ "#chi-siamo" | relURL }}">Chi siamo</a>
-      <a href="{{ "#proponi" | relURL }}">Proponi un talk</a>
-      <a href="{{ "#ospitaci" | relURL }}">Ospitaci</a>
+      {{- range $voci }}
+      <a href="{{ .url }}"{{ if and .tipo (eq .tipo $tipo) }} aria-current="page"{{ end }}>{{ .nome }}</a>
+      {{- end }}
       <a class="btn" href="{{ site.Params.meetup }}">Entra su Meetup</a>
     </nav>
   </div>

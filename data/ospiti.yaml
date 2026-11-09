@@ -1,9 +1,51 @@
-# Link facoltativi per le pagine di chi ci ha ospitato, con il nome scritto come nel campo host degli eventi.
-# Esempio:
-#
-# "Nome Azienda":
-#   sito: "https://..."
-#   linkedin: "https://www.linkedin.com/company/..."
-#   descrizione: "Una riga su chi sono."
-#   logo: "img/ospiti/nome.png"   # in assets/img/ospiti/
-{}
+# Sito, LinkedIn, logo e descrizione di chi ci ha ospitato, con il nome scritto come nel campo host degli eventi.
+# Loghi in assets/img/ospiti/, presi dai siti ufficiali il 9/11/2026 (fonti in ../fonti/loghi-ospiti/fonti.json fuori dal repo).
+# Campi: sito, linkedin, logo, descrizione (tutti facoltativi).
+
+"Abilio S.p.A.":
+  sito: "https://www.abilio.com/"
+  linkedin: "https://www.linkedin.com/company/abiliocorporate"
+  logo: "img/ospiti/abilio.svg"
+"Antreem":
+  sito: "https://antreem.com/"
+  logo: "img/ospiti/antreem.svg"
+"Bp Cube srl":
+  sito: "https://www.bpcube.com/"
+  linkedin: "https://www.linkedin.com/company/bp-cube"
+  logo: "img/ospiti/bp-cube.png"
+"Coopolis SpA - Sede operativa":
+  sito: "https://coopolis.it/"
+  logo: "img/ospiti/coopolis.png"
+"Croce Rossa Italiana - Comitato di Marotta Mondolfo":
+  sito: "https://crimarottamondolfo.org/"
+  logo: "img/ospiti/cri-marotta-mondolfo.png"
+"Fondazione Banca Del Monte E Cassa Di Risparmio Faenza":
+  sito: "https://fondazionemontefaenza.it/"
+  linkedin: "https://www.linkedin.com/company/fondazione-banca-del-monte-e-cassa-di-risparmio-faenza"
+  logo: "img/ospiti/fondazione-monte-faenza.png"
+"Gellify":
+  sito: "https://gellify.com/italy/"
+  linkedin: "https://www.linkedin.com/company/gellify"
+"HUB Cesena | Spazio Coworking":
+  sito: "https://hub-cesena.it/"
+  linkedin: "https://www.linkedin.com/company/hub-cesena"
+  logo: "img/ospiti/hub-cesena.svg"
+"Incubatore U-Start":
+  sito: "https://www.ustart.it/"
+  logo: "img/ospiti/u-start.png"
+"Iprel Progetti Srl":
+  sito: "https://www.iprel.it/"
+  linkedin: "https://www.linkedin.com/company/iprelprogetti"
+"Maggioli S.p.A. - Headquarters":
+  sito: "https://www.maggioli.com/it-it"
+  logo: "img/ospiti/maggioli.jpg"
+"Sacmi Imola S.C.":
+  sito: "https://sacmi.com/"
+  linkedin: "https://www.linkedin.com/company/sacmi"
+  logo: "img/ospiti/sacmi.jpg"
+"W3Make Artigianato Digitale":
+  sito: "https://w3make.it/"
+  logo: "img/ospiti/w3make.svg"
+"Youth Center Ca 'Vaina":
+  sito: "https://www.cavaina.it/"
+  logo: "img/ospiti/ca-vaina.png"
