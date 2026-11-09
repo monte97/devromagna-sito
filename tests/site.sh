@@ -291,13 +291,18 @@ check_speaker_ospiti() {
   pos_lugo="$(tr -d '\n' < "$page" | grep -o 'Incubatore U-Start.*' | wc -c)"
   pos_mado="$(tr -d '\n' < "$page" | grep -o 'Studio Mado.*' | wc -c)"
   [ "$pos_lugo" -gt "$pos_mado" ] || fail "ospiti non ordinati per ultima serata"
-  assert_contains "$page" "e 4 altri"
+  assert_contains "$page" "poster"
+  assert_contains "$page" "7 serate dal 2017"
   page="$OUT/ospiti/studio-mado/index.html"
   assert_file "$page"
   assert_contains "$page" "7 serate"
   assert_contains "$page" "jest-painless-javascript-testing"
-  # Elenco compatto nelle schede degli speaker: al massimo 3, poi il link
-  assert_contains "$OUT/speaker/index.html" "e 3 altri"
+  # Schede poster: conteggio e anno del primo talk; foto dello speaker se c'è nei dati
+  assert_contains "$OUT/speaker/index.html" "6 talk dal 2017"
+  assert_contains "$OUT/speaker/index.html" "in arrivo"
+  tr -d '\n' < "$OUT/speaker/index.html" | grep -o 'poster-foto[^>]*' | grep -q 'speaker/fixture-giulia' || fail "foto dello speaker assente nella scheda"
+  assert_contains "$OUT/speaker/giulia-bianchi/index.html" "term-foto"
+  assert_not_contains "$OUT/speaker/nicola-iarocci/index.html" "term-foto"
 
   # Navigazione e home: link alle pagine nuove, sponsor prima degli incontri passati
   index="$OUT/index.html"

@@ -6,4 +6,5 @@
 #   sessionize: "https://sessionize.com/..."
 #   sito: "https://..."
 #   bio: "Una riga su chi è."
+#   foto: "img/speaker/nome-cognome.jpg"   # in assets/img/speaker/
 {}

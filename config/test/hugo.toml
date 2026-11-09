@@ -16,3 +16,9 @@ buildFuture = true
   [[module.mounts]]
     source = "data"
     target = "data"
+  [[module.mounts]]
+    source = "tests/fixtures/assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"

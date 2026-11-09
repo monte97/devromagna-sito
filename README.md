@@ -53,7 +53,10 @@ Link e una riga di bio, facoltativi, in `data/speaker.yaml`, con il nome scritto
   sessionize: "https://sessionize.com/..."
   sito: "https://..."
   bio: "Una riga su chi è."
+  foto: "img/speaker/nome-cognome.jpg"   # file in assets/img/speaker/
 ```
+
+La foto (facoltativa) compare nella scheda e nella pagina dello speaker: Hugo la ritaglia in quadrato. Usa una foto fornita dalla persona, o presa dal suo profilo solo con il suo permesso.
 
 Lo stesso vale per chi ci ospita: ogni valore di `host` diventa una pagina `/ospiti/nome/`, e l'elenco `/ospiti/` è ordinato per ultima serata. Sito, LinkedIn e una riga di descrizione, facoltativi, in `data/ospiti.yaml`:
 
@@ -62,6 +65,7 @@ Lo stesso vale per chi ci ospita: ogni valore di `host` diventa una pagina `/osp
   sito: "https://..."
   linkedin: "https://www.linkedin.com/company/..."
   descrizione: "Una riga su chi sono."
+  logo: "img/ospiti/nome.png"   # file in assets/img/ospiti/
 ```
 
 ## Sponsor, media partner, affiliazioni

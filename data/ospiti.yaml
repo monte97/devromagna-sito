@@ -5,4 +5,5 @@
 #   sito: "https://..."
 #   linkedin: "https://www.linkedin.com/company/..."
 #   descrizione: "Una riga su chi sono."
+#   logo: "img/ospiti/nome.png"   # in assets/img/ospiti/
 {}

@@ -4,6 +4,9 @@
 <header class="hero evento-hero">
   <div class="container">
     <p class="tag">Speaker · {{ len $talk }} talk a DevRomagna</p>
+    {{- with $link.foto }}{{ with resources.Get . }}{{ $img := .Fill "240x240 Center webp q80" }}
+    <img class="term-foto" src="{{ $img.RelPermalink }}" width="120" height="120" alt="">
+    {{- end }}{{ end }}
     <h1>{{ .Title }}</h1>
     {{- with $link.bio }}<p class="hero-sottotitolo">{{ . }}</p>{{ end }}
     {{- if or $link.linkedin $link.sessionize $link.sito }}

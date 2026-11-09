@@ -11,14 +11,12 @@
     <p class="hero-sottotitolo">{{ .Description }} Hai uno spazio per una serata? <a href="{{ "#ospitaci" | relURL }}">Ospitaci</a>.</p>
   </div>
 </header>
+{{- $info := hugo.Data.ospiti | default dict -}}
 <section class="home-passati">
-  <div class="container grid-3">
+  <div class="container poster-griglia">
     {{- range $righe }}
-    <article class="card scheda">
-      <h2><a href="{{ .pagina.RelPermalink }}">{{ .pagina.Title }}</a></h2>
-      <p class="scheda-meta">{{ with .citta }}{{ . }} · {{ end }}{{ .n }} {{ cond (eq .n 1) "serata" "serate" }}</p>
-      {{ partial "mini-eventi.html" (dict "eventi" .talk "tutti" .pagina.RelPermalink "max" 3) }}
-    </article>
+    {{- $i := index $info .pagina.Title | default dict }}
+    {{ partial "scheda-poster.html" (dict "pagina" .pagina "eventi" .talk "unita" "serata" "immagine" $i.logo "citta" .citta) }}
     {{- end }}
   </div>
 </section>

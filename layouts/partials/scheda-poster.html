@@ -1,0 +1,27 @@
+{{- /* Scheda "poster" di speaker e ospiti.
+       Parametri: pagina (term), eventi (pagine dal più recente), unita ("talk" | "serata"), immagine (percorso in assets/ o ""). */ -}}
+{{- $p := .pagina -}}
+{{- $ev := .eventi -}}
+{{- $n := len $ev -}}
+{{- $ultimo := index $ev 0 -}}
+{{- $futuro := eq (partial "evento-stato.html" $ultimo) "in-arrivo" -}}
+{{- $unita := cond (eq .unita "talk") "talk" (cond (eq $n 1) "serata" "serate") -}}
+{{- $primo := index $ev (sub $n 1) -}}
+{{- $kicker := printf "%d %s" $n $unita -}}
+{{- if gt $n 1 }}{{ $kicker = printf "%s dal %s" $kicker ($primo.Date.Format "2006") }}{{ end -}}
+{{- with .citta }}{{ $kicker = printf "%s · %s" . $kicker }}{{ end -}}
+<article class="poster">
+  <span class="poster-num" aria-hidden="true">{{ $n }}</span>
+  <div class="poster-testa">
+    {{- with .immagine }}{{ with resources.Get . }}
+    {{- $img := .Fill "160x160 Center webp q80" }}
+    <img class="poster-foto" src="{{ $img.RelPermalink }}" width="80" height="80" alt="" loading="lazy">
+    {{- end }}{{ end }}
+    <p class="poster-kicker">{{ $kicker }}</p>
+    <h2><a class="poster-link" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>
+  </div>
+  <div class="poster-piede">
+    <p class="poster-titolo">{{ $ultimo.Title }}</p>
+    <p class="poster-data">{{ cond $futuro "in arrivo" "ultimo" }} · {{ time.Format ":date_medium" $ultimo.Date }}</p>
+  </div>
+</article>

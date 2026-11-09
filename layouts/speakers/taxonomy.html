@@ -11,14 +11,12 @@
     <p class="hero-sottotitolo">{{ .Description }} {{ len $righe }} persone sono salite sul palco: vuoi essere la prossima? <a href="{{ site.Params.sessionize }}">Proponi un talk</a>.</p>
   </div>
 </header>
+{{- $info := hugo.Data.speaker | default dict -}}
 <section class="home-passati">
-  <div class="container grid-3">
+  <div class="container poster-griglia">
     {{- range $righe }}
-    <article class="card scheda">
-      <h2><a href="{{ .pagina.RelPermalink }}">{{ .pagina.Title }}</a></h2>
-      <p class="scheda-meta">{{ .n }} talk</p>
-      {{ partial "mini-eventi.html" (dict "eventi" .talk "tutti" .pagina.RelPermalink "max" 3) }}
-    </article>
+    {{- $i := index $info .pagina.Title | default dict }}
+    {{ partial "scheda-poster.html" (dict "pagina" .pagina "eventi" .talk "unita" "talk" "immagine" $i.foto) }}
     {{- end }}
   </div>
 </section>
