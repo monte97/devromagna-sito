@@ -67,6 +67,10 @@
           <dl class="evento-info">
             <dt>Quando</dt>
             <dd>{{ time.Format ":date_full" .Date }}, ore {{ .Date.Format "15:04" }}</dd>
+            {{ with .GetTerms "speakers" }}
+            <dt>Speaker</dt>
+            <dd>{{ range $i, $s := . }}{{ if $i }}, {{ end }}<a href="{{ $s.RelPermalink }}">{{ $s.Title }}</a>{{ end }}</dd>
+            {{ end }}
             {{ if or .Params.host .Params.city }}
             <dt>Dove</dt>
             <dd>

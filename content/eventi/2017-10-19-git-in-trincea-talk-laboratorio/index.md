@@ -14,4 +14,3 @@ Trucchi e barbatrucchi. Best practices. Consigli sull'uso di git in progetti ope
 
 Se vuoi porta il tuo laptop per seguire live gli esempi mostrati dallo speaker.
 
-Speaker: Nicola Iarocci (per il profilo c'è google).

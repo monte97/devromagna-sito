@@ -14,4 +14,3 @@ Bitcoin permette lo scambio di valore in modo "pseudonimo","permissionless" e "t
 
 La grande sfida e' mantenere la decentralizzazione di una rete peer to peer permettendo al sistema di scalare in modo da potersi confrontare con i grandi sistemi elettronici di oggi (es: Visa) con LightingNetwork, Smart Contracts e Sidechains. Raggiungendo cosi sia le funzionalita di store-of-value permesse oggi dalla lenta e costosa blockchain, sia di chash-system veloce ed economico.
 
-Speaker: Enrico Rubboli. Enrico lavora come software engineer per un importante exchange di cryptocurrency.

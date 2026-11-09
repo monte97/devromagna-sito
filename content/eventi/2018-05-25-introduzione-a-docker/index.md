@@ -14,7 +14,5 @@ address: "Via Galielo Galilei 6"
 
 I container, ed in particolare Docker, sono uno dei tormentoni IT più diffusi da 5 anni a questa parte. In questa serata faremo una rapida analisi delle tecnologie utilizzate da Docker, per capire come funziona e come differisce da una VM. Passeremo poi all'installazione di Docker su Windows e Linux, come utilizzarlo con gli argomenti più comuni della sua command line, come utilizzare immagini già presenti nell'hub, modificarle per le nostre esigenze e pubblicarle su un registry privato. Infine valuteremo alcuni consigli, best-practice e vedremo come "l'ecosistema container" si sta evolvendo in questi ultimi anni.
 
-Speaker: Davide Giunchi. Abito a Forlì e faccio il Sysadmin da quando Linux era un sistema operativo di nicchia. Ho lavorato per aziende di vario tipo e dimensione, sempre focalizzandomi su Linux ed il Web, portando con me la passione per il Software Libero. Negli ultimi anni mi sono avvicinato alle metodologie DevOps, cercando di migliorare e velocizzare la collaborazione con sviluppatori PHP e Python.
-
 https://giunchi.net/
 https://www.linkedin.com/in/davidegiunchi

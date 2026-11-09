@@ -11,7 +11,6 @@ address: "Via di Giù, 8, 48022 Lugo RA, Italy"
 map_url: "https://www.google.com/maps/search/?api=1&query=Incubatore+U-Start&query_place_id=ChIJ64iGpiUDfkcRgPeCVqYoG64"
 ---
 
-Speaker: Antonio Murgia
 
 Abbiamo tutti visto demo accattivanti. Ma quando si prova a costruire qualcosa del genere in una vera azienda? Benvenuti nel mondo della proprietà dei dati frammentata, delle convenzioni di denominazione incoerenti e dei controlli di accesso complessi. La maggior parte delle demo ignora questa realtà disordinata. I sistemi in produzione non possono permettersi questo lusso.
 

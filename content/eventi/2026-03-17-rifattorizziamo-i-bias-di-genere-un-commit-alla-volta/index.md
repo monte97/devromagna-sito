@@ -19,4 +19,3 @@ Giulia e Andrea, due professionisti IT con 11 e 25 anni di esperienza, portano s
 
 L'obiettivo non è puntare il dito, ma accendere una luce su questi "bug" culturali. I partecipanti usciranno da questo talk con una maggiore consapevolezza e, soprattutto, con una serie di "hotfix" pratici e applicabili da subito per contribuire a un ambiente di lavoro più equo, innovativo e performante per tutti.
 
-Speakers: Giulia Naponiello e Andrea Verlicchi

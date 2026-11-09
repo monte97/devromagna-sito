@@ -339,6 +339,11 @@ check_evento_arricchito() {
   assert_contains "$page" "Via san Giovanni Bosco"
   assert_contains "$page" "ospiti/fondazione-banca-del-monte"
   assert_contains "$page" "Apri la mappa"
+  # speaker linkato nel riquadro a lato; niente riga "Speaker:" ripetuta nel testo
+  tr -d '\n' < "$page" | grep -o 'evento-info.*</dl>' | grep -q 'speaker/francesco-montelli/' || fail "speaker non linkato nel riquadro"
+  page="$OUT/eventi/2026-04-21-the-functional-side-of-c-functors-and-monads-in-everyday/index.html"
+  assert_file "$page"
+  tr -d '\n' < "$page" | grep -o 'evento-testo.*evento-lato' | grep -q 'Speaker:' && fail "riga Speaker: ancora nel testo"
   # descrizione completa anche dove prima c'era solo l'abstract
   assert_contains "$OUT/eventi/2025-10-30-web-components-a-che-punto-siamo/index.html" "evento-info"
 }

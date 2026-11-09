@@ -23,4 +23,3 @@ Inoltre:
 * calcolo dello spreco di banda incluso;
 * generazione automatica del tag \`picture\` con controllo test-driven.
 
-Speaker: Andrea Verlicchi, Web Performance Engineer @ Netcentric. Inizia la sua carriera nei primi anni 2000 come sviluppatore full-stack per poi specializzarsi via via sullo sviluppo front-end nei suoi vari aspetti. Fan dell'open source e creatore di vanilla-lazyload, Andrea lavora oggi in Netcentric come specialista delle performance web.

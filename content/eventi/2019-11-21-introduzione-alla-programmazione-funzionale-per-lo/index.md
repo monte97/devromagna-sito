@@ -14,4 +14,3 @@ Che cos'è la programmazione funzionale? Vorresti capire quali sono le differenz
 
 Se non conosci C# e usi altri linguaggi OOP va bene lo stesso: penso e spero che questa sessione sia utile anche per te.
 
-Speaker: Nicola Iarocci.Nicola is a passionate Python, C#, and F# developer based in Ravenna, Italy. He is the co-founder of CIR2000 where he leads the development of Amica 10, an accounting software for Italian small businesses. He is the creator and maintainer of a number of open source projects such as the Eve REST API Framework, Cerberus, FatturaElettronica.NET, and more. Awarded with the Microsoft MVP Award for Development Technologies and MongoDB Master, Nicola is also a Trainer and (sometimes too much of a) passionate Speaker.

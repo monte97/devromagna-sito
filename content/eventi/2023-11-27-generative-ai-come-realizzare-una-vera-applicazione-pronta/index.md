@@ -22,4 +22,3 @@ Per realizzare il chatbot presenteremo LangStream.ai, un progetto
 OpenSource che consente di realizzare facilmente applicazioni pronte
 per andare in produzione, sfruttando lo stato dell'arte relativamente a Generative AI.
 
-Speakers: Enrico Olivelli e Nicolò Boschi

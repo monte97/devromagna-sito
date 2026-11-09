@@ -14,4 +14,3 @@ Concetti di programmazione funzionale come functor e monad sono spesso percepiti
 
 In questo talk vedremo cosa sono davvero, come riconoscerli e applicarli in modo consapevole nel codice di tutti i giorni, scoprendo come la programmazione funzionale stia influenzando sempre più il modo in cui scriviamo software.
 
-Speaker: Marco Mengoli

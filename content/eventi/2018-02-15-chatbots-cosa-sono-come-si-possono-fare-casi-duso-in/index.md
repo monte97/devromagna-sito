@@ -16,7 +16,6 @@ essere molto interessanti. Introduzione al "nuovo" mercato che si sta
 creando dal punto di vista di una società che lavora attivamente in questo
 spazio assi.st. Intelligenza artificiale, machine learning e altro.
 
-Speaker: Claudio Comandini, laureato in Scienze dell'Informazione a Cesena.
 Dalla prima meta' degli anni 2000 lotta contro i product owner/manager per
 cercare ogni giorno di non reinventare la ruota quadrata. . Programma in
 (male) in java, ha fatto per parecchio tempo applicazioni web, usa diverse

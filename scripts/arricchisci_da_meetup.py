@@ -17,6 +17,8 @@ import urllib.request
 from pathlib import Path
 
 URL_FOTO = re.compile(r"^\s*https?://\S+\.(?:jpe?g|png|gif)\s*$", re.I)
+# lo speaker va nel frontmatter (e nel riquadro a lato), non ripetuto nel testo
+RIGA_SPEAKER = re.compile(r"^\s*(?:Speakers?|Relatori?|Relatrice)\s*:", re.I)
 
 
 def dati_meetup(html: str, event_id: str) -> dict:
@@ -40,7 +42,7 @@ def dati_meetup(html: str, event_id: str) -> dict:
 
 
 def pulisci_descrizione(testo: str) -> str:
-    righe = [r.rstrip() for r in testo.replace("\r\n", "\n").split("\n") if not URL_FOTO.match(r)]
+    righe = [r.rstrip() for r in testo.replace("\r\n", "\n").split("\n") if not URL_FOTO.match(r) and not RIGA_SPEAKER.match(r)]
     corpo = "\n".join(righe).strip()
     return re.sub(r"\n{3,}", "\n\n", corpo)
 

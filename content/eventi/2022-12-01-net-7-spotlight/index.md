@@ -19,5 +19,4 @@ address: "Via Selice, 17/A"
 \- ASP\.NET Core 7
 \- Containers support
 
-Speakers: Ugo Lattanzi e Nicola Iarocci.
 \- Ugo è Lego lover che\, non riuscendo a trasformare questo suo amore in un lavoro\, si è buttato sullo sviluppo software\. Sostiene che ci sia una similitudine tra i mattoncini colorati e docker\, motivo per il quale conteinerizza tutti gli applicativi\. \.NET Core lover\, python enthusiastic e golang padawan\.

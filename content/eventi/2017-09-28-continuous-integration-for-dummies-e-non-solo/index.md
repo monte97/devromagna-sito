@@ -26,4 +26,3 @@ Alcuni degli argomenti trattati
 
 • automatizzare i deploy
 
-Speaker: Michele Orselli. Sono di Ravenna, mi piace la spiaggia, il mare, la piadina spessa un dito. Le lettere S e Z per me hanno lo stesso suono. Tra un weekend e l'altro lavoro come software engineer, ora sono CTO e partner in ideato. Mi interessano vari aspetti del mondo del software ma ho il pallino per l'automazione nei processi di sviluppo. Sono coautore di "PHP Best Practices", pubblicato da FAG nel 2012. Mi piace raccontare quello che imparo, potete trovare alcuni dei miei talk qui: https://joind.in/user/view/188

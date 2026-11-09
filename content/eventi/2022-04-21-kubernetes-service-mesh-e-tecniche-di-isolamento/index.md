@@ -13,4 +13,3 @@ map_url: "https://www.google.com/maps/search/?api=1&query=44.351665,11.703611"
 
 Kubernetes offre molte features (forse anche troppe) per gestire il deployment di una applicazione. In questo talk cercheremo di fare un po' di chiarezza sui name-space, load-balancer, service mesh. Vedremo inoltre come ottimizzare il routing degli ip pubblici tramite TLS il tutto partendo da uno use-case reale.
 
-Speaker: Gabriele Santomaggio. Senior Member of Technical Staff In Vmware. Developer, speaker, 99.9% open-source code. RabbitMQ/Kubernetes team. Sometimes Kubernetes-Kubeflow Machine Learning. Co-Inventor of https://k3ai.github.io/
