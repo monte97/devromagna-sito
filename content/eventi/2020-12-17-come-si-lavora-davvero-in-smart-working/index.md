@@ -1,6 +1,11 @@
 ---
-title: "Smart Working, a true story"
-date: 2020-12-17
+title: "Come si lavora davvero in Smart Working?"
+date: 2020-12-17T21:00:00+01:00
+city: "Online"
+abstract: "🔥 Tema scottante del 2020: lo Smart Working! Chi lo pratica da anni, chi lo ha visto per la prima volta durante il lockdown e chi invece... si illude di saperlo fare!"
+meetup_url: "https://www.meetup.com/devromagna/events/274919052/"
+speakers:
+  - name: "Alessandro Minoccheri"
 ---
 
 Giovedí 17 Dicembre 2020

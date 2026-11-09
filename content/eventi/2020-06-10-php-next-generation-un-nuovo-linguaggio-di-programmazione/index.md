@@ -1,6 +1,11 @@
 ---
-title: "PHP Next Generation"
-date: 2020-06-10
+title: "PHP Next Generation: un nuovo linguaggio di programmazione"
+date: 2020-06-10T21:00:00+02:00
+city: "Online"
+abstract: "PHP è un linguaggio di programmazione che, tra chi non lo usa, soffre di una cattiva nomea. Questo a causa di un passato in cui era un linguaggio indubbiamente meno \"performante\" e privo di funzionalità rispetto tanti altri concorrenti dei suoi tempi, ma anche a causa di tanto cattivo utilizzo che ne è stato fatto. Tutto ciò ha fatto si che molti programmatori lo abbandonassero, rimanendo..."
+meetup_url: "https://www.meetup.com/devromagna/events/270877741/"
+speakers:
+  - name: "Matteo Galacci"
 ---
 
 ## Abstract

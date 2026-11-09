@@ -1,7 +1,7 @@
 ---
 title: "Neo4j GDBMS, un grafo per connetterli tutti (online)"
 date: 2020-03-26T21:00:00+01:00
-host: "Online event"
+city: "Online"
 abstract: "ATTENZIONE: questo sarà il nostro primo meetup online. Ecco il link per collegarsi: https://meet.google.com/mhy-excz-jox"
 meetup_url: "https://www.meetup.com/devromagna/events/269579666/"
 speakers:
