@@ -271,7 +271,8 @@ check_speaker_ospiti() {
   assert_file "$page"
   assert_contains "$page" "6 talk"
   assert_contains "$page" "net-7-spotlight"
-  assert_not_contains "$page" "LinkedIn"
+  # nessun bottone LinkedIn nell'intestazione (il footer ha quello di DevRomagna)
+  tr -d '\n' < "$page" | grep -o '<header class="hero.*</header>\|<header class=hero.*</header>' | grep -q 'LinkedIn' && fail "bottone LinkedIn senza link nei dati"
   # Link LinkedIn e Sessionize dal file di dati (speaker delle fixture)
   page="$OUT/speaker/giulia-bianchi/index.html"
   assert_file "$page"
