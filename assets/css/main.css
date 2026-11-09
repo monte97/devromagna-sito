@@ -1029,3 +1029,8 @@ strong {
   .poster { transition: none; }
   .poster:hover, .poster:focus-within { transform: none; }
 }
+
+/* Respiro prima del footer: le sezioni hanno padding solo in alto per impilarsi in home */
+main > :last-child:not(.evento-body) {
+  padding-bottom: clamp(56px, 8vw, 96px);
+}
