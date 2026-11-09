@@ -9,4 +9,6 @@ speakers:
   - name: "Francesco Montelli"
 ---
 
-Le foto di questa pagina sono segnaposto.
+La qualità dei test è diventata ancora più critica con l'avvento degli strumenti di AI generativa: più codice prodotto, più test generati, più copertura. Eppure i bug arrivano lo stesso. Il problema, spesso, non è nel codice che scriviamo ma nelle verifiche che costruiamo sopra.
+
+_Le foto di questa pagina sono segnaposto._
