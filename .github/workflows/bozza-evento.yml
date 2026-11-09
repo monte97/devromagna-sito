@@ -1,0 +1,28 @@
+name: Bozza evento da Meetup
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bozza:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Crea le bozze dal feed iCal
+        run: python3 scripts/nuovo_evento_da_meetup.py https://www.meetup.com/devromagna/events/ical/ content/eventi
+
+      - name: Apri la PR
+        uses: peter-evans/create-pull-request@v8.1.1
+        with:
+          branch: bozza-evento-meetup
+          commit-message: "content: bozza evento da Meetup"
+          title: "Bozza evento da Meetup"
+          body: |
+            Bozza creata dal feed iCal di Meetup.
+            Prima del merge controlla e completa l'evento: città, sede (host), speaker e abstract.

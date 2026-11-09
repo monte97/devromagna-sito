@@ -4,3 +4,4 @@ resources/_gen/
 .claude/oc-runs/
 tests/fixtures/tmp/
 .DS_Store
+__pycache__/

@@ -1,0 +1,59 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Meetup//Meetup Calendar 1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+NAME:DevRomagna
+X-WR-CALNAME:DevRomagna
+BEGIN:VTIMEZONE
+TZID:Europe/Rome
+TZURL:http://tzurl.org/zoneinfo-outlook/Europe/Rome
+X-LIC-LOCATION:Europe/Rome
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:event_317143074@meetup.com
+SEQUENCE:1
+DTSTAMP:20261109T111007Z
+DTSTART;TZID=Europe/Rome:20261112T200000
+DTEND;TZID=Europe/Rome:20261112T210000
+SUMMARY:Argus SBOM Guard: gestione delle vulnerabilità a partire dagli SB
+ OM
+DESCRIPTION:DevRomagna\nSpeaker: Matteo Vitali\n\nLa generazione degli SBO
+ M (Software Bill of Materials) è una pratica ormai piuttosto diffusa e co
+ nsolidata\, ma in molti contesti rimane un’attività isolata: gli SBOM v
+ engono prodotti durante la CI/CD e poi archiviati senza essere integrati i
+ n un processo di gestione e mitigazione dei rischi di sicurezza informatic
+ a.\n\nIn questo talk presenterò Argus SBOM Guard\, un progetto open sourc
+ e\, installabile e gestibile su una propria infrastruttura\, nato per sper
+ imentare un approccio leggero alla raccolta degli SBOM\, alla correlazione
+  delle vulnerabilità note e al tracciamento delle attività di mitigazion
+ e.\n\nL’obiettivo è mostrare un flusso pratico che collega SBOM\, inven
+ tario software\, vulnerability intelligence\, prioritizzazione dei rischi 
+ e verifica delle mitigazioni\, con uno sguardo anche alle esigenze emergen
+ ti in materia di sicurezza della supply chain e ai requisiti introdotti da
+  normative come NIS2 e DORA.\n\nUn racconto tecnico\, pragmatico e basato 
+ sull’esperienza di sviluppo di un progetto open source nato come side pr
+ oject.
+URL;VALUE=URI:https://www.meetup.com/devromagna/events/317143074/
+STATUS:CONFIRMED
+CREATED:20261026T101003Z
+LAST-MODIFIED:20261026T101003Z
+CLASS:PUBLIC
+END:VEVENT
+X-ORIGINAL-URL:https://www.meetup.com/devromagna/events/ical/
+X-WR-CALNAME:DevRomagna
+END:VCALENDAR
