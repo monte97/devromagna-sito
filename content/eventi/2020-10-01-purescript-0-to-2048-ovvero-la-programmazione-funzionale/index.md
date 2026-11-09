@@ -5,5 +5,5 @@ city: "Online"
 abstract: "Partire da zero ed arrivare ad una versione giocabile di 2048 in due ore imparando un nuovo linguaggio."
 meetup_url: "https://www.meetup.com/devromagna/events/273479126/"
 speakers:
-  - name: "Giulio Cesare Solaroli"
+  - "Giulio Cesare Solaroli"
 ---

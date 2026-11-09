@@ -6,5 +6,5 @@ host: "Abilio S.p.A."
 abstract: "Questo talk discuterà l'esperienza di passare da C# a Go per un progetto di codifica video. Verranno mostrati i pro e i contro di utilizzare Go, un linguaggio di programmazione moderno ed efficiente e come si confronta con gli altri linguaggi. Inoltre, verrà discusso l'uso di FFmpeg, uno strumento open-source per la codifica video, e come è stato utilizzato per creare l'encoder video. Saranno..."
 meetup_url: "https://www.meetup.com/devromagna/events/291027334/"
 speakers:
-  - name: "Daniel Enrico Botta"
+  - "Daniel Enrico Botta"
 ---

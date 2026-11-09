@@ -6,7 +6,7 @@ host: "Ideato"
 abstract: "E' giunto il momento di fare un po' di chiarezza in mezzo al caos che ultimamente gira intorno a \"intelligenza artificiale\", \"machine learning\", \"deep learning\" e le altre parolacce di questo genere che affollano la rete. Si sente parlare sempre più di algoritmi intelligenti che fanno cose sempre più strabilianti e in molti pensano che si tratti di una nuova magia nera pronta a divorare il mondo...."
 meetup_url: "https://www.meetup.com/devromagna/events/249113255/"
 speakers:
-  - name: "Marco Radossi"
+  - "Marco Radossi"
 slides: "slide.pdf"
 ---
 

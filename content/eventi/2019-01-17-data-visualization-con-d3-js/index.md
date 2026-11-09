@@ -6,7 +6,7 @@ host: "Antreem"
 abstract: "I grafici sono un aspetto importante per un buon impatto visivo di un'applicazione web. E per essi esistono svariate librerie, ma non sempre è così facile... Perché a volte si vorrebbe un'impostazione, un effetto, una colorazione che proprio non si riesce a fare, o magari ci porterebbe ben oltre la solita regola dell'80-20."
 meetup_url: "https://www.meetup.com/devromagna/events/256601308/"
 speakers:
-  - name: "Massimo Artizzu"
+  - "Massimo Artizzu"
 slides: "slide.pdf"
 repo: "https://github.com/DevRomagna/eventi/tree/master/20190117-Data-Visualization-con-D3"
 ---

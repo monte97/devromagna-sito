@@ -6,5 +6,5 @@ host: "Incubatore U-Start"
 abstract: "Speaker: Antonio Murgia"
 meetup_url: "https://www.meetup.com/devromagna/events/316922059/"
 speakers:
-  - name: "Antonio Murgia"
+  - "Antonio Murgia"
 ---

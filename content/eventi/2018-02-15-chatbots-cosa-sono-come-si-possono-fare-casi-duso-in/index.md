@@ -6,6 +6,6 @@ host: "Dinamo Coworking Space"
 abstract: "Chatbots: cosa sono, come si possono fare, perchè potrebbero essere molto interessanti. Introduzione al \"nuovo\" mercato che si sta creando dal punto di vista di una società che lavora attivamente in questo spazio assi.st. Intelligenza artificiale, machine learning e altro."
 meetup_url: "https://www.meetup.com/devromagna/events/247045707/"
 speakers:
-  - name: "Claudio Comandini"
+  - "Claudio Comandini"
 slides: "slide.pdf"
 ---

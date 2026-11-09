@@ -6,5 +6,5 @@ host: "Cittattiva"
 abstract: "Trucchi e barbatrucchi. Best practices. Consigli sull'uso di git in progetti open source (e non solo), sia di breve che di lungo periodo. Breve riassunto sui branching model già visti in passato (Git Flow, GitHub Flow, ecc.) per poi passare ad aspetti più pratici come: alias utili, rebase, long running branches, soluzione dei conflitti, riscrivere la storia, undo, eccetera."
 meetup_url: "https://www.meetup.com/devromagna/events/240838433/"
 speakers:
-  - name: "Nicola Iarocci"
+  - "Nicola Iarocci"
 ---

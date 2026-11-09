@@ -6,7 +6,7 @@ host: "Studio Mado"
 abstract: "Nella prima parte racconcentrero' sopratutto git flow quale flusso di sviluppo ideato da Vincent Driessen, che descrive un branching model preciso costruito attorno al versioning semantico. In questa prima parte si parlera' in maniera approfondita anche di versionamento semantico. Al termine di questa prima parte verranno accennati altri branching model."
 meetup_url: "https://www.meetup.com/devromagna/events/239110404/"
 speakers:
-  - name: "Simone Gentili"
+  - "Simone Gentili"
 ---
 
 - Data: 20 Aprile 2017 

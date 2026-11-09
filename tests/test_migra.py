@@ -208,9 +208,9 @@ class MainTest(unittest.TestCase):
         migra.main(self.live, self.repo, self.meetup, self.out)
 
         page = self.bundle("2019-01-01-talk-uno").read_text(encoding="utf-8")
-        self.assertIn('name: "Mario Rossi"', page)
-        self.assertIn('name: "Anna Bianchi"', page)
-        self.assertIn('name: "Luca Verdi"', page)
+        self.assertIn('  - "Mario Rossi"', page)
+        self.assertIn('  - "Anna Bianchi"', page)
+        self.assertIn('  - "Luca Verdi"', page)
         self.assertNotIn("Bio lunga", page)
 
     def test_speaker_separati_da_riga_vuota(self):
@@ -224,8 +224,8 @@ class MainTest(unittest.TestCase):
         )
         migra.main(self.live, self.repo, self.meetup, self.out)
         page = self.bundle("2019-01-01-talk-uno").read_text(encoding="utf-8")
-        self.assertIn('name: "Mario Rossi"', page)
-        self.assertIn('name: "Anna Bianchi"', page)
+        self.assertIn('  - "Mario Rossi"', page)
+        self.assertIn('  - "Anna Bianchi"', page)
 
     def test_cartella_senza_meetup(self):
         cartella = self.repo / "20200610-php-next-generation"

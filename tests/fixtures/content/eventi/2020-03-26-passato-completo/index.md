@@ -2,7 +2,7 @@
 title: "Neo4j e i database a grafo"
 date: 2020-03-26T20:00:00+01:00
 speakers:
-  - name: "Marco Verdi"
+  - "Marco Verdi"
 city: "Rimini"
 host: "Casa della Tecnologia"
 slides: "slide.pdf"

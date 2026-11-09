@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{- $righe := slice -}}
+{{- range .Data.Terms -}}
+  {{- $talk := .Pages.ByDate.Reverse -}}
+  {{- $righe = $righe | append (dict "pagina" .Page "talk" $talk "ultimo" (index $talk 0).Date "n" (len $talk)) -}}
+{{- end -}}
+{{- $righe = sort $righe "ultimo" "desc" -}}
+<header class="hero evento-hero">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="hero-sottotitolo">{{ .Description }} {{ len $righe }} persone sono salite sul palco: vuoi essere la prossima? <a href="{{ site.Params.sessionize }}">Proponi un talk</a>.</p>
+  </div>
+</header>
+<section class="home-passati">
+  <div class="container grid-3">
+    {{- range $righe }}
+    {{- $ultimo := index .talk 0 }}
+    <article class="card speaker-card">
+      <h2><a href="{{ .pagina.RelPermalink }}">{{ .pagina.Title }}</a></h2>
+      <p class="speaker-conteggio">{{ .n }} talk · ultimo il {{ time.Format ":date_medium" .ultimo }}</p>
+      <p class="speaker-ultimo"><a href="{{ $ultimo.RelPermalink }}">{{ $ultimo.Title }}</a></p>
+    </article>
+    {{- end }}
+  </div>
+</section>
+{{ end }}

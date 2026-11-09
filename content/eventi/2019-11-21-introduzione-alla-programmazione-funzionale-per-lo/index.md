@@ -6,5 +6,5 @@ host: "Studio Mado"
 abstract: "Che cos'è la programmazione funzionale? Vorresti capire quali sono le differenze con la programmazione ad oggetti? In questa presentazione mostrerò le basi del linguaggio F# e le differenze tra la programmazione funzionale e quella ad oggetti. Durante il percorso presenterò esempi di codice scritto in C#/OOP e in F#/FP, in modo da evidenziare come i due paradigmi differiscano in stile e approccio."
 meetup_url: "https://www.meetup.com/devromagna/events/265866894/"
 speakers:
-  - name: "Nicola Iarocci"
+  - "Nicola Iarocci"
 ---

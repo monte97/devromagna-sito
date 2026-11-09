@@ -65,7 +65,7 @@ class MainTest(unittest.TestCase):
         testo = bundle.read_text(encoding="utf-8")
         self.assertIn('title: "' + TITOLO + '"', testo)
         self.assertIn("date: 2026-11-12T20:00:00+01:00", testo)
-        self.assertIn('name: "Matteo Vitali"', testo)
+        self.assertIn('  - "Matteo Vitali"', testo)
         self.assertIn(
             'meetup_url: "https://www.meetup.com/devromagna/events/317143074/"',
             testo,

@@ -257,19 +257,28 @@ check_task6() {
 
 check_speaker_ospiti() {
   local page index sp_nicola sp_prossimi
-  # Pagina speaker: ognuno con i suoi talk, contati, anche i talk in arrivo
+  # Pagina speaker: ordinata per ultimo talk (Matteo Vitali, 12/11/2026, prima di Nicola Iarocci)
   page="$OUT/speaker/index.html"
   assert_file "$page"
   assert_contains "$page" "Nicola Iarocci"
   assert_contains "$page" "Matteo Galacci"
-  assert_contains "$page" "Matteo Vitali"
-  assert_contains "$page" "6 talk"
-  assert_contains "$page" "2026-11-12-argus-sbom-guard"
   assert_not_contains "$page" '"Mi"'
-  # Nicola (6 talk) viene prima di chi ne ha uno solo
   sp_nicola="$(tr -d '\n' < "$page" | grep -o 'Nicola Iarocci.*' | wc -c)"
   sp_prossimi="$(tr -d '\n' < "$page" | grep -o 'Matteo Vitali.*' | wc -c)"
-  [ "$sp_nicola" -gt "$sp_prossimi" ] || fail "speaker non ordinati per numero di talk"
+  [ "$sp_prossimi" -gt "$sp_nicola" ] || fail "speaker non ordinati per ultimo talk"
+  # Pagina del singolo speaker, con i suoi talk
+  page="$OUT/speaker/nicola-iarocci/index.html"
+  assert_file "$page"
+  assert_contains "$page" "6 talk"
+  assert_contains "$page" "net-7-spotlight"
+  assert_not_contains "$page" "LinkedIn"
+  # Link LinkedIn e Sessionize dal file di dati (speaker delle fixture)
+  page="$OUT/speaker/giulia-bianchi/index.html"
+  assert_file "$page"
+  assert_contains "$page" "linkedin.com/in/esempio-fixture"
+  assert_contains "$page" "sessionize.com/esempio-fixture"
+  # Dall'evento si arriva alla pagina dello speaker
+  assert_contains "$OUT/eventi/2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire/index.html" "speaker/matteo-vitali/"
 
   # Pagina di chi ci ha ospitato: dalle sedi degli eventi, niente "Online event" ne' indirizzi
   page="$OUT/ospiti/index.html"

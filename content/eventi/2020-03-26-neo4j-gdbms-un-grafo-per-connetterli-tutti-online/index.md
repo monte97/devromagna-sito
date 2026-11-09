@@ -5,7 +5,7 @@ city: "Online"
 abstract: "ATTENZIONE: questo sarà il nostro primo meetup online. Ecco il link per collegarsi: https://meet.google.com/mhy-excz-jox"
 meetup_url: "https://www.meetup.com/devromagna/events/269579666/"
 speakers:
-  - name: "Luca Canella"
+  - "Luca Canella"
 slides: "https://github.com/DevRomagna/eventi/blob/master/26032020-Neo4jGDBMS/GDBMS%20-%2026032020.pptx"
 repo: "https://github.com/DevRomagna/eventi/tree/master/26032020-Neo4jGDBMS"
 ---

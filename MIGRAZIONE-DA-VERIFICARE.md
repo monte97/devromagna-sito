@@ -28,3 +28,4 @@ Voci emerse durante la migrazione dal sito storico che richiedono una conferma p
 - Evento "Designing a chat with your data agent on Databricks: Architecture and Guardrails" (2026-10-26) presente solo fra gli eventi Meetup, senza materiali ne' voce nella pagina storica.
 - 20 serate senza speaker nel frontmatter (Meetup non riportava una riga "Speaker:"): completare il campo `speakers` a mano, servono anche per la pagina Speaker.
 - Pagina "Chi ci ha ospitato": costruita dal campo `host` (la sede su Meetup); controllare i nomi delle aziende e unire eventuali doppioni.
+- Link LinkedIn e Sessionize degli speaker: `data/speaker.yaml` è vuoto, da compilare (nessun link inventato).

@@ -6,6 +6,6 @@ host: "Gellify"
 abstract: "La diversità e l'inclusione sono temi cruciali nel settore tecnologico. Come si traducono in azioni concrete nella vita di tutti i giorni di uno sviluppatore, di un designer o di un manager?"
 meetup_url: "https://www.meetup.com/devromagna/events/313450456/"
 speakers:
-  - name: "Giulia Naponiello"
-  - name: "Andrea Verlicchi"
+  - "Giulia Naponiello"
+  - "Andrea Verlicchi"
 ---

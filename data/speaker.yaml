@@ -1,0 +1,9 @@
+# Link facoltativi per le pagine degli speaker, con il nome scritto come negli eventi.
+# Compaiono solo i campi compilati. Esempio:
+#
+# "Nome Cognome":
+#   linkedin: "https://www.linkedin.com/in/..."
+#   sessionize: "https://sessionize.com/..."
+#   sito: "https://..."
+#   bio: "Una riga su chi è."
+{}

@@ -6,7 +6,7 @@ host: "Ideato"
 abstract: "Nello sviluppo Frontend a ogni nuovo progetto scegliamo il framework che in quel momento ci sembra il migliore, ma poi qualcosa si rompe. Con il passare del tempo ci accorgiamo che quel framework non risponde più alle esigenze e diventa più d’intralcio che d’aiuto! Durante il talk vedremo come poter sviluppare un'applicazione frontend senza alcun tipo di dipendenza esterna, ma soprtattutto..."
 meetup_url: "https://www.meetup.com/devromagna/events/245313829/"
 speakers:
-  - name: "Francesco Strazzullo"
+  - "Francesco Strazzullo"
 ---
 
 - Data: 18 Gennaio 2018

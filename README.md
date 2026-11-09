@@ -19,7 +19,7 @@ Frontmatter (obbligatori solo `title` e `date`):
 title: "Titolo del talk"
 date: 2026-12-16T19:00:00+01:00
 speakers:
-  - name: "Nome Cognome"
+  - "Nome Cognome"
 city: "Faenza"
 host: "Azienda o spazio che ci ospita"
 meetup_url: "https://www.meetup.com/devromagna/events/..."
@@ -43,7 +43,19 @@ Nella cartella dell'evento:
 
 ## Speaker e chi ci ha ospitato
 
-Le pagine `/speaker/` e `/ospiti/` si costruiscono da sole dai campi `speakers` e `host` degli eventi. Per comparire basta che l'evento li abbia compilati.
+Ogni nome in `speakers` diventa una pagina `/speaker/nome-cognome/` con i suoi talk; l'elenco `/speaker/` è ordinato per ultimo talk. Scrivi il nome sempre allo stesso modo, o finisce su due pagine diverse.
+
+Link e una riga di bio, facoltativi, in `data/speaker.yaml`, con il nome scritto come negli eventi:
+
+```yaml
+"Nome Cognome":
+  linkedin: "https://www.linkedin.com/in/..."
+  sessionize: "https://sessionize.com/..."
+  sito: "https://..."
+  bio: "Una riga su chi è."
+```
+
+La pagina `/ospiti/` si costruisce dal campo `host` degli eventi.
 
 ## Sponsor, media partner, affiliazioni
 

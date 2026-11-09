@@ -104,7 +104,7 @@ def _bundle(evento: dict) -> str:
     if evento.get("meetup_url"):
         righe.append(f"meetup_url: {_yaml(evento['meetup_url'])}")
     if evento.get("speaker"):
-        righe += ["speakers:", f"  - name: {_yaml(evento['speaker'])}"]
+        righe += ["speakers:", f"  - {_yaml(evento['speaker'])}"]
     righe += ["---", "", (evento.get("description") or "").strip().replace("DevRomagna\n", "", 1), ""]
     return "\n".join(righe)
 

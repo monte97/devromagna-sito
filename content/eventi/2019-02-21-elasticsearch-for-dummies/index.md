@@ -6,7 +6,7 @@ host: "Studio Mado"
 abstract: "Sviluppare API con interfaccia REST. Archiviare i dati per future ricerche temporali su centinaia di migliaia di record nuovi ogni giorno. Costruire una dashboard per interrogare i dati raccolti. Costruire report. Come fare a realizzare tutto questo? Come fare senza dover rompere il salvadanaio usando strumenti eccessivamente costosi? Le risposte a queste domande sono Elasticsearch e Kibana. Open..."
 meetup_url: "https://www.meetup.com/devromagna/events/257990206/"
 speakers:
-  - name: "Simone Gentili"
+  - "Simone Gentili"
 ---
 
  - [sensorario/docker-elasticsearch](https://github.com/sensorario/docker-elasticsearch)

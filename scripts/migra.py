@@ -382,7 +382,7 @@ def _front_matter(evento, slides, repo):
     if speaker:
         righe.append("speakers:")
         for nome in speaker:
-            righe.append("  - name: " + json.dumps(nome, ensure_ascii=False))
+            righe.append("  - " + json.dumps(nome, ensure_ascii=False))
     if slides:
         righe.append("slides: " + json.dumps(slides, ensure_ascii=False))
     if repo:

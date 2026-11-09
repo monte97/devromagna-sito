@@ -6,7 +6,7 @@ host: "Antreem"
 abstract: "Dalla sua nascita JavaScript è sempre stato un linguaggio debolmente tipizzato, e in un certo senso questo ne ha decretato il successo. Ma col successo e la necessità di scrivere applicazioni front-end e back-end sempre più vaste e complesse si ha avuto la necessità di migliori strumenti per evitare il caos."
 meetup_url: "https://www.meetup.com/devromagna/events/260307622/"
 speakers:
-  - name: "Massimo Artizzu"
+  - "Massimo Artizzu"
 slides: "slide.pdf"
 repo: "https://github.com/DevRomagna/eventi/tree/master/20190516-TypeScript-introduzione-e-casi-d%27uso"
 ---

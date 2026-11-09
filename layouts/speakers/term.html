@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{- $talk := .Pages.ByDate.Reverse -}}
+{{- $link := index (hugo.Data.speaker | default dict) .Title | default dict -}}
+<header class="hero evento-hero">
+  <div class="container">
+    <p class="tag">Speaker · {{ len $talk }} talk a DevRomagna</p>
+    <h1>{{ .Title }}</h1>
+    {{- with $link.bio }}<p class="hero-sottotitolo">{{ . }}</p>{{ end }}
+    {{- if or $link.linkedin $link.sessionize $link.sito }}
+    <p class="speaker-link">
+      {{- with $link.linkedin }}<a class="btn btn-soft" href="{{ . }}">LinkedIn</a>{{ end }}
+      {{- with $link.sessionize }}<a class="btn btn-soft" href="{{ . }}">Sessionize</a>{{ end }}
+      {{- with $link.sito }}<a class="btn btn-soft" href="{{ . }}">Sito</a>{{ end }}
+    </p>
+    {{- end }}
+  </div>
+</header>
+<section class="home-passati">
+  <div class="container">
+    <div class="grid-3">
+      {{- range $talk }}
+      <article class="card evento-card">
+        <p class="evento-card-data">{{ time.Format ":date_medium" .Date }}</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.city }}<p class="evento-card-meta">{{ . }}</p>{{ end }}
+      </article>
+      {{- end }}
+    </div>
+    <p class="speaker-tutti"><a href="{{ "speaker/" | relURL }}">← Tutti gli speaker</a></p>
+  </div>
+</section>
+{{ end }}

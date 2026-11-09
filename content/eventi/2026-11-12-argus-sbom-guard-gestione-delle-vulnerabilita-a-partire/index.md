@@ -4,7 +4,7 @@ date: 2026-11-12T20:00:00+01:00
 abstract: "La generazione degli SBOM (Software Bill of Materials) è una pratica ormai piuttosto diffusa e consolidata, ma in molti contesti rimane un'attività isolata: gli SBOM vengono prodotti durante la CI/CD e poi archiviati senza essere integrati in un processo di gestione e mitigazione dei rischi di sicurezza informatica."
 meetup_url: "https://www.meetup.com/devromagna/events/317143074/"
 speakers:
-  - name: "Matteo Vitali"
+  - "Matteo Vitali"
 ---
 
 La generazione degli SBOM (Software Bill of Materials) è una pratica ormai piuttosto diffusa e consolidata, ma in molti contesti rimane un'attività isolata: gli SBOM vengono prodotti durante la CI/CD e poi archiviati senza essere integrati in un processo di gestione e mitigazione dei rischi di sicurezza informatica.
