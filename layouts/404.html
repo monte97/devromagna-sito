@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Errore 404</p>
+    <h1>Pagina non trovata</h1>
+    <p>La pagina che cerchi non esiste o è stata spostata.</p>
+    <p class="hero-cta">
+      <a class="btn" href="{{ site.Home.RelPermalink }}">Vai alla home</a>
+      <a class="btn btn-soft" href="{{ "eventi/" | relURL }}">Tutti gli eventi</a>
+    </p>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,54 @@
+{{ define "main" }}
+  {{- $inArrivo := slice -}}
+  {{- $tenuti := slice -}}
+  {{- range (where site.RegularPages "Section" "eventi").ByDate -}}
+    {{- if eq (partial "evento-stato.html" .) "in-arrivo" -}}
+      {{- $inArrivo = $inArrivo | append . -}}
+    {{- else -}}
+      {{- $tenuti = $tenuti | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $tenuti = sort $tenuti "Date" "desc" -}}
+  <header class="hero evento-hero">
+    <div class="container">
+      <h1>{{ .Title | default "Eventi" }}</h1>
+      <p>Gli incontri passati e quelli in arrivo della community DevRomagna.</p>
+    </div>
+  </header>
+  <section class="home-passati">
+    <div class="container">
+      {{ with $inArrivo }}
+      <div class="eventi-gruppo">
+        <h2>In arrivo</h2>
+        <div class="grid-3">
+          {{ range . }}
+          <article class="card evento-card">
+            <p class="evento-card-data">{{ time.Format ":date_medium" .Date }}</p>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ with (partial "evento-meta.html" .) }}<p class="evento-card-meta">{{ . }}</p>{{ end }}
+            <p class="evento-card-stato"><span class="tag">In arrivo</span></p>
+          </article>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ with $tenuti }}
+      {{ range .GroupByDate "2006" }}
+      <div class="eventi-gruppo">
+        <h2>{{ .Key }}</h2>
+        <div class="grid-3">
+          {{ range .Pages }}
+          <article class="card evento-card">
+            <p class="evento-card-data">{{ time.Format ":date_medium" .Date }}</p>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ with (partial "evento-meta.html" .) }}<p class="evento-card-meta">{{ . }}</p>{{ end }}
+            <p class="evento-card-stato"><span class="tag">Tenuto</span></p>
+          </article>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

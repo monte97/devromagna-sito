@@ -764,3 +764,20 @@ strong {
     align-items: flex-start;
   }
 }
+
+.eventi-gruppo {
+  margin-bottom: 48px;
+}
+
+.eventi-gruppo:last-child {
+  margin-bottom: 0;
+}
+
+.eventi-gruppo h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.evento-card-stato {
+  margin-top: 16px;
+  margin-bottom: 0;
+}

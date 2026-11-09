@@ -168,6 +168,52 @@ check_task4_vuoto() {
   rm -rf "$out"
 }
 
+check_task5() {
+  local page prefix off_arrivo off2020 off2018 off_oggi off2099
+
+  page="$OUT/eventi/index.html"
+  assert_file "$page"
+  assert_contains "$page" "In arrivo"
+  assert_contains "$page" "Il futuro del web"
+  assert_contains "$page" "Incontro di oggi"
+  assert_contains "$page" "Neo4j e i database a grafo"
+  assert_contains "$page" "Introduzione a Docker"
+  assert_contains "$page" "26 mar 2020"
+  assert_contains "$page" "25 mag 2018"
+
+  off_arrivo="$(grep -bo -- 'In arrivo' "$page" | head -n1 | cut -d: -f1)"
+  off2020="$(grep -bo -- '>2020<' "$page" | head -n1 | cut -d: -f1)"
+  off2018="$(grep -bo -- '>2018<' "$page" | head -n1 | cut -d: -f1)"
+  off_oggi="$(grep -bo -- 'Incontro di oggi' "$page" | head -n1 | cut -d: -f1)"
+  off2099="$(grep -bo -- 'Il futuro del web' "$page" | head -n1 | cut -d: -f1)"
+
+  [ -n "$off_arrivo" ] && [ -n "$off2020" ] && [ -n "$off2018" ] \
+    || fail "mancano le intestazioni di raggruppamento in $page"
+  [ -n "$off_oggi" ] && [ -n "$off2099" ] \
+    || fail "mancano gli eventi in arrivo in $page"
+
+  [ "$off_arrivo" -lt "$off2020" ] || fail "il gruppo In arrivo non e' in testa in $page"
+  [ "$off2020" -lt "$off2018" ] || fail "gli anni passati non sono dal piu' recente in $page"
+  [ "$off_oggi" -lt "$off2099" ] || fail "gli eventi in arrivo non sono in ordine di data in $page"
+
+  page="$OUT/onepage/index.html"
+  assert_file "$page"
+  grep -Eq 'http-equiv=[^ >]*refresh' "$page" || fail "meta refresh mancante in $page"
+  assert_contains "$page" "url=https://monte97.github.io/devromagna-sito/"
+  assert_contains "$page" "Vai alla home"
+  assert_contains "$page" "noindex"
+
+  prefix="$(site_base_path)"
+  [ -n "$prefix" ] || prefix="/"
+
+  page="$OUT/404.html"
+  assert_file "$page"
+  grep -Eq "href=[\"']?${prefix}" "$page" || fail "link alla home mancante in $page"
+  grep -Eq "href=[\"']?${prefix}eventi/" "$page" || fail "link agli eventi mancante in $page"
+
+  assert_file "$OUT/eventi/index.xml"
+}
+
 bash "$ROOT/scripts/fixture-oggi.sh"
 build_site
 check_global
@@ -175,5 +221,6 @@ check_task2
 check_task3
 check_task4
 check_task4_vuoto
+check_task5
 
 printf 'PASS\n'
