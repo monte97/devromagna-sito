@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{- $serate := .Pages.ByDate.Reverse -}}
+{{- $info := index (hugo.Data.ospiti | default dict) .Title | default dict -}}
+{{- $citta := (index $serate 0).Params.city -}}
+<header class="hero evento-hero">
+  <div class="container">
+    <p class="tag">Ci ha ospitato · {{ len $serate }} {{ cond (eq (len $serate) 1) "serata" "serate" }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="hero-sottotitolo">{{ with $info.descrizione }}{{ . }}{{ else }}{{ with $citta }}{{ . }}. {{ end }}Grazie per aver aperto le porte a DevRomagna.{{ end }}</p>
+    {{- if or $info.sito $info.linkedin }}
+    <p class="speaker-link">
+      {{- with $info.sito }}<a class="btn btn-soft" href="{{ . }}">Sito</a>{{ end }}
+      {{- with $info.linkedin }}<a class="btn btn-soft" href="{{ . }}">LinkedIn</a>{{ end }}
+    </p>
+    {{- end }}
+  </div>
+</header>
+<section class="home-passati">
+  <div class="container">
+    <div class="grid-3">
+      {{- range $serate }}
+      <article class="card evento-card">
+        <p class="evento-card-data">{{ time.Format ":date_medium" .Date }}</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with (partial "evento-meta.html" .) }}<p class="evento-card-meta">{{ . }}</p>{{ end }}
+      </article>
+      {{- end }}
+    </div>
+    <p class="speaker-tutti"><a href="{{ "ospiti/" | relURL }}">← Tutti quelli che ci hanno ospitato</a></p>
+  </div>
+</section>
+{{ end }}

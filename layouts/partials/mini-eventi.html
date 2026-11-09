@@ -1,0 +1,17 @@
+{{- /* Elenco compatto degli ultimi eventi: chip con la data, titolo; poi il link alla pagina completa.
+       Parametri: "eventi" (pagine, già in ordine), "tutti" (URL della pagina completa), "max" (quanti mostrarne). */ -}}
+{{- $max := .max | default 3 -}}
+<ul class="mini-eventi">
+  {{- range first $max .eventi }}
+  <li>
+    <a href="{{ .RelPermalink }}">
+      <span class="mini-data"><b>{{ .Date.Format "2" }}</b>{{ .Date | time.Format "Jan" }} {{ .Date.Format "06" }}</span>
+      <span class="mini-titolo">{{ .Title }}</span>
+    </a>
+  </li>
+  {{- end }}
+</ul>
+{{- $altri := sub (len .eventi) $max -}}
+{{- if gt $altri 0 }}
+<p class="mini-altri"><a href="{{ .tutti }}">e {{ $altri }} {{ cond (eq $altri 1) "altro" "altri" }} →</a></p>
+{{- end }}

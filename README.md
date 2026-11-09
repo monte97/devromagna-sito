@@ -55,7 +55,14 @@ Link e una riga di bio, facoltativi, in `data/speaker.yaml`, con il nome scritto
   bio: "Una riga su chi è."
 ```
 
-La pagina `/ospiti/` si costruisce dal campo `host` degli eventi.
+Lo stesso vale per chi ci ospita: ogni valore di `host` diventa una pagina `/ospiti/nome/`, e l'elenco `/ospiti/` è ordinato per ultima serata. Sito, LinkedIn e una riga di descrizione, facoltativi, in `data/ospiti.yaml`:
+
+```yaml
+"Nome Azienda":
+  sito: "https://..."
+  linkedin: "https://www.linkedin.com/company/..."
+  descrizione: "Una riga su chi sono."
+```
 
 ## Sponsor, media partner, affiliazioni
 

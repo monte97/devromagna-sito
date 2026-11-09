@@ -3,15 +3,19 @@ locale = "it-IT"
 timeZone = "Europe/Rome"
 title = "DevRomagna"
 buildFuture = true
+capitalizeListTitles = false
 
 [taxonomies]
   speaker = "speakers"
+  ospite = "host"
 
 [permalinks]
   [permalinks.taxonomy]
     speakers = "/speaker/"
+    host = "/ospiti/"
   [permalinks.term]
     speakers = "/speaker/:slug/"
+    host = "/ospiti/:slug/"
 
 [params]
   subtitle = "Developer Community della Romagna"

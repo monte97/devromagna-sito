@@ -835,3 +835,89 @@ strong {
 .hero .speaker-link .btn-soft { color: var(--ink); text-decoration: none; }
 .speaker-tutti { margin-top: 32px; font-weight: 600; }
 .link-speaker { color: inherit; }
+
+/* Schede di speaker e ospiti */
+.scheda {
+  display: flex;
+  flex-direction: column;
+}
+.scheda h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.15;
+}
+.scheda h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.scheda h2 a:hover,
+.scheda h2 a:focus-visible {
+  color: var(--magenta);
+}
+.scheda-meta {
+  margin: 6px 0 18px;
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+.mini-eventi {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.mini-eventi a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px;
+  margin: -8px;
+  border-radius: 12px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.mini-eventi a:hover,
+.mini-eventi a:focus-visible {
+  background: var(--pink);
+}
+.mini-data {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--pink);
+  color: var(--magenta-dark);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.mini-data b {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--magenta);
+}
+.mini-eventi a:hover .mini-data,
+.mini-eventi a:focus-visible .mini-data {
+  background: var(--white);
+}
+.mini-titolo {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.mini-altri {
+  margin: auto 0 0;
+  padding-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.mini-altri a {
+  color: var(--magenta);
+  text-decoration: none;
+}

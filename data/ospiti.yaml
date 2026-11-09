@@ -1,0 +1,8 @@
+# Link facoltativi per le pagine di chi ci ha ospitato, con il nome scritto come nel campo host degli eventi.
+# Esempio:
+#
+# "Nome Azienda":
+#   sito: "https://..."
+#   linkedin: "https://www.linkedin.com/company/..."
+#   descrizione: "Una riga su chi sono."
+{}

@@ -280,14 +280,24 @@ check_speaker_ospiti() {
   # Dall'evento si arriva alla pagina dello speaker
   assert_contains "$OUT/eventi/2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire/index.html" "speaker/matteo-vitali/"
 
-  # Pagina di chi ci ha ospitato: dalle sedi degli eventi, niente "Online event" ne' indirizzi
+  # Chi ci ha ospitato: ordinati per ultima serata, ognuno con la sua pagina
   page="$OUT/ospiti/index.html"
   assert_file "$page"
   assert_contains "$page" "Studio Mado"
   assert_contains "$page" "Iprel Progetti Srl"
-  assert_contains "$page" "7 serate"
   assert_not_contains "$page" "Online event"
   assert_not_contains "$page" "Viale Principe"
+  local pos_lugo pos_mado
+  pos_lugo="$(tr -d '\n' < "$page" | grep -o 'Incubatore U-Start.*' | wc -c)"
+  pos_mado="$(tr -d '\n' < "$page" | grep -o 'Studio Mado.*' | wc -c)"
+  [ "$pos_lugo" -gt "$pos_mado" ] || fail "ospiti non ordinati per ultima serata"
+  assert_contains "$page" "e 4 altri"
+  page="$OUT/ospiti/studio-mado/index.html"
+  assert_file "$page"
+  assert_contains "$page" "7 serate"
+  assert_contains "$page" "jest-painless-javascript-testing"
+  # Elenco compatto nelle schede degli speaker: al massimo 3, poi il link
+  assert_contains "$OUT/speaker/index.html" "e 3 altri"
 
   # Navigazione e home: link alle pagine nuove, sponsor prima degli incontri passati
   index="$OUT/index.html"
