@@ -298,6 +298,8 @@ check_speaker_ospiti() {
   assert_contains "$OUT/ospiti/abilio-s.p.a./index.html" "term-logo"
   assert_contains "$OUT/ospiti/abilio-s.p.a./index.html" "abilio.com"
   assert_not_contains "$OUT/ospiti/studio-mado/index.html" "term-logo"
+  # Il talk in fondo alla scheda è un link all'evento
+  tr -d '\n' < "$OUT/ospiti/index.html" | grep -o 'poster-evento[^>]*' | grep -q 'eventi/' || fail "il talk nella scheda ospite non porta all'evento"
   page="$OUT/ospiti/studio-mado/index.html"
   assert_file "$page"
   assert_contains "$page" "7 serate"

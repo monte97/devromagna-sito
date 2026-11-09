@@ -1067,3 +1067,16 @@ main > :last-child:not(.evento-body) {
   height: 100%;
   object-fit: contain;
 }
+/* il titolo del talk in fondo alla scheda porta all'evento, sopra il link della scheda */
+.poster-evento {
+  position: relative;
+  z-index: 1;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.poster-evento:hover,
+.poster-evento:focus-visible {
+  text-decoration-thickness: 2px;
+}

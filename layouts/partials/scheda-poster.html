@@ -27,7 +27,7 @@
     <h2><a class="poster-link" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>
   </div>
   <div class="poster-piede">
-    <p class="poster-titolo">{{ $ultimo.Title }}</p>
+    <p class="poster-titolo"><a class="poster-evento" href="{{ $ultimo.RelPermalink }}">{{ $ultimo.Title }}</a></p>
     <p class="poster-data">{{ cond $futuro "in arrivo" "ultimo" }} · {{ time.Format ":date_medium" $ultimo.Date }}</p>
   </div>
 </article>
