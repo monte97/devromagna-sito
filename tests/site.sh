@@ -372,5 +372,6 @@ check_speaker_ospiti
 check_menu_attivo
 check_evento_arricchito
 check_loghi_nascosti
+assert_contains "$OUT/index.html" "linkedin.com/company/devromagna"
 
 printf 'PASS\n'
