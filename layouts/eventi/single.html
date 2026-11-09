@@ -23,11 +23,11 @@
             <div class="gallery evento-gallery">
               {{ range $foto }}
                 {{ if strings.HasSuffix .Name ".svg" }}
-                  <a href="{{ .RelPermalink }}"><img src="{{ .RelPermalink }}" alt="" width="1200" height="800" loading="lazy"></a>
+                  <a href="{{ .RelPermalink }}" data-lightbox="foto"><img src="{{ .RelPermalink }}" alt="Foto della serata" width="1200" height="800" loading="lazy"></a>
                 {{ else }}
                   {{ $small := .Resize "600x" }}
                   {{ $big := .Resize "1600x" }}
-                  <a href="{{ $big.RelPermalink }}"><img src="{{ $small.RelPermalink }}" alt="" width="{{ $small.Width }}" height="{{ $small.Height }}" loading="lazy"></a>
+                  <a href="{{ $big.RelPermalink }}" data-lightbox="foto"><img src="{{ $small.RelPermalink }}" alt="Foto della serata" width="{{ $small.Width }}" height="{{ $small.Height }}" loading="lazy"></a>
                 {{ end }}
               {{ end }}
             </div>
@@ -61,7 +61,8 @@
         <aside class="evento-lato">
           {{ with $locandina }}
             {{ $img := .Resize "800x webp q82" }}
-            <img class="evento-locandina" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="Locandina dell'evento">
+            {{ $grande := .Resize "1600x webp q85" }}
+            <a href="{{ $grande.RelPermalink }}" data-lightbox="locandina"><img class="evento-locandina" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="Locandina dell'evento"></a>
           {{ end }}
           <dl class="evento-info">
             <dt>Quando</dt>
@@ -84,4 +85,7 @@
       </div>
     </section>
   </article>
+  {{- with resources.Get "js/lightbox.js" | minify | fingerprint }}
+  <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+  {{- end }}
 {{ end }}

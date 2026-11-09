@@ -1,5 +1,8 @@
 buildFuture = true
 
+[params]
+  mostra_loghi = true
+
 [module]
   [[module.mounts]]
     source = "tests/fixtures/content"

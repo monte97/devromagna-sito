@@ -34,6 +34,9 @@ Fino al giorno della serata la pagina è un annuncio con il bottone di Meetup. D
 
 ## Dopo la serata
 
+Le foto e la locandina si aprono ingrandite in sovrimpressione (frecce e Esc da tastiera).
+
+
 Nella cartella dell'evento:
 
 - aggiungi le foto (`foto-01.jpg`, `foto-02.jpg`, ...), già ridimensionate a una dimensione ragionevole, meglio sotto 1 MB l'una: Hugo crea le miniature;
@@ -67,6 +70,8 @@ Lo stesso vale per chi ci ospita: ogni valore di `host` diventa una pagina `/osp
   descrizione: "Una riga su chi sono."
   logo: "img/ospiti/nome.png"   # file in assets/img/ospiti/
 ```
+
+I loghi sono registrati ma per ora non compaiono: si accendono con `mostra_loghi = true` in `hugo.toml`. Finché è spento, la pagina dell'ospite mostra il numero delle serate al posto del logo.
 
 ## Sponsor, media partner, affiliazioni
 

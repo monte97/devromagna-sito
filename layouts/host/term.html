@@ -2,21 +2,28 @@
 {{- $serate := .Pages.ByDate.Reverse -}}
 {{- $info := index (hugo.Data.ospiti | default dict) .Title | default dict -}}
 {{- $citta := (index $serate 0).Params.city -}}
-<header class="hero evento-hero">
-  <div class="container">
-    <p class="tag">Ci ha ospitato · {{ len $serate }} {{ cond (eq (len $serate) 1) "serata" "serate" }}</p>
-    {{- with $info.logo }}{{ with resources.Get . }}
-      {{- $src := . }}{{ if ne .MediaType.SubType "svg" }}{{ $src = .Fit "480x240 webp q85" }}{{ end }}
-    <span class="term-logo"><img src="{{ $src.RelPermalink }}" alt="Logo di {{ $.Title }}"></span>
-    {{- end }}{{ end }}
-    <h1>{{ .Title }}</h1>
-    <p class="hero-sottotitolo">{{ with $info.descrizione }}{{ . }}{{ else }}{{ with $citta }}{{ . }}. {{ end }}Grazie per aver aperto le porte a DevRomagna.{{ end }}</p>
-    {{- if or $info.sito $info.linkedin }}
-    <p class="speaker-link">
-      {{- with $info.sito }}<a class="btn btn-soft" href="{{ . }}">Sito</a>{{ end }}
-      {{- with $info.linkedin }}<a class="btn btn-soft" href="{{ . }}">LinkedIn</a>{{ end }}
-    </p>
-    {{- end }}
+<header class="hero evento-hero hero-ospite">
+  <div class="container hero-ospite-griglia">
+    <div class="hero-ospite-testo">
+      <p class="tag">Ci ha ospitato · {{ len $serate }} {{ cond (eq (len $serate) 1) "serata" "serate" }}</p>
+      <h1>{{ .Title }}</h1>
+      <p class="hero-sottotitolo">{{ with $info.descrizione }}{{ . }}{{ else }}{{ with $citta }}{{ . }}. {{ end }}Grazie per aver aperto le porte a DevRomagna.{{ end }}</p>
+      {{- if or $info.sito $info.linkedin }}
+      <p class="speaker-link">
+        {{- with $info.sito }}<a class="btn btn-soft" href="{{ . }}">Sito</a>{{ end }}
+        {{- with $info.linkedin }}<a class="btn btn-soft" href="{{ . }}">LinkedIn</a>{{ end }}
+      </p>
+      {{- end }}
+    </div>
+    <div class="hero-ospite-pannello">
+      {{- $logo := "" }}{{ if site.Params.mostra_loghi }}{{ with $info.logo }}{{ $logo = resources.Get . }}{{ end }}{{ end }}
+      {{- with $logo }}
+        {{- $src := . }}{{ if ne .MediaType.SubType "svg" }}{{ $src = .Fit "720x360 webp q85" }}{{ end }}
+      <img class="term-logo" src="{{ $src.RelPermalink }}" alt="Logo di {{ $.Title }}">
+      {{- else }}
+      <p class="pannello-numero"><b>{{ len $serate }}</b>{{ if eq (len $serate) 1 }}serata nel {{ else }}serate dal {{ end }}{{ (index $serate (sub (len $serate) 1)).Date.Format "2006" }}</p>
+      {{- end }}
+    </div>
   </div>
 </header>
 <section class="home-passati">

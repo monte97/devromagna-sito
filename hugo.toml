@@ -18,6 +18,8 @@ capitalizeListTitles = false
     host = "/ospiti/:slug/"
 
 [params]
+  # Loghi degli ospiti: registrati in data/ospiti.yaml, mostrati solo quando questo è true
+  mostra_loghi = false
   subtitle = "Developer Community della Romagna"
   description = "Gli sviluppatori romagnoli fanno rete"
   meetup = "https://www.meetup.com/devromagna/"

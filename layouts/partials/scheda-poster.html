@@ -14,7 +14,8 @@
   <span class="poster-num" aria-hidden="true">{{ $n }}</span>
   <div class="poster-testa">
     {{- $logo := eq .unita "serata" }}
-    {{- with .immagine }}{{ with resources.Get . }}
+    {{- $immagine := .immagine }}{{ if and $logo (not site.Params.mostra_loghi) }}{{ $immagine = "" }}{{ end }}
+    {{- with $immagine }}{{ with resources.Get . }}
     {{- if $logo }}
       {{- $src := . }}{{ if ne .MediaType.SubType "svg" }}{{ $src = .Fit "320x160 webp q85" }}{{ end }}
     <span class="poster-logo"><img src="{{ $src.RelPermalink }}" alt="" loading="lazy"></span>

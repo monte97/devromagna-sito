@@ -343,6 +343,17 @@ check_evento_arricchito() {
   assert_contains "$OUT/eventi/2025-10-30-web-components-a-che-punto-siamo/index.html" "evento-info"
 }
 
+check_loghi_nascosti() {
+  # In produzione (mostra_loghi = false) i loghi degli ospiti non compaiono: al loro posto il numero delle serate
+  local out
+  out="$(mktemp -d)"
+  ( cd "$ROOT" && hugo --quiet --minify -d "$out" ) || fail "build di produzione fallita"
+  grep -rq 'poster-logo\|term-logo' "$out/ospiti" && fail "loghi visibili con mostra_loghi = false"
+  assert_contains "$out/ospiti/abilio-s.p.a./index.html" "pannello-numero"
+  assert_contains "$out/ospiti/abilio-s.p.a./index.html" "abilio.com"
+  rm -rf "$out"
+}
+
 bash "$ROOT/scripts/fixture-oggi.sh"
 build_site
 check_global
@@ -355,5 +366,6 @@ check_task6
 check_speaker_ospiti
 check_menu_attivo
 check_evento_arricchito
+check_loghi_nascosti
 
 printf 'PASS\n'
