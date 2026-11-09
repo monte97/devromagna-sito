@@ -36,7 +36,7 @@ check_global() {
 
   local file
   while IFS= read -r file; do
-    if grep -Eq '(href|src)="/[^/]' "$file"; then
+    if grep -Eq '(href|src)=["'"'"']?/([^/]|$)' "$file"; then
       fail "link o asset root-relative in $file (usare relURL/absURL/.RelPermalink)"
     fi
   done < <(find "$OUT" -type f -name '*.html')

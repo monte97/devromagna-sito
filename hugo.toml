@@ -1,7 +1,8 @@
 baseURL = "https://monte97.github.io/devromagna-sito/"
-languageCode = "it-IT"
+locale = "it-IT"
 timeZone = "Europe/Rome"
 title = "DevRomagna"
+disableKinds = ["taxonomy", "term"]
 
 [params]
   subtitle = "Developer Community della Romagna"
