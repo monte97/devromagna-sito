@@ -8,3 +8,5 @@ meetup_url: "https://www.meetup.com/devromagna/events/314648262/"
 speakers:
   - name: "Francesco Montelli"
 ---
+
+Le foto di questa pagina sono segnaposto.

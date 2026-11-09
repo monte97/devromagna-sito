@@ -237,6 +237,21 @@ check_task6() {
     || fail "evento 'Il tuo collega più produttivo scrive test inutili' assente"
   grep -Rq -- "Web Components: a che punto siamo?" "$eventi_dir" \
     || fail "evento 'Web Components: a che punto siamo?' assente"
+
+  page="$OUT/eventi/2025-10-30-web-components-a-che-punto-siamo/index.html"
+  assert_file "$page"
+  assert_contains "$page" "hanno subito evoluzioni significative"
+
+  page="$OUT/eventi/2026-05-13-il-tuo-collega-piu-produttivo-scrive-test-inutili/index.html"
+  assert_file "$page"
+  assert_contains "$page" "segnaposto-01.svg"
+  assert_contains "$page" "Le foto di questa pagina sono segnaposto."
+
+  page="$OUT/eventi/2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire/index.html"
+  assert_file "$page"
+  assert_contains "$page" "In arrivo"
+  assert_contains "$page" "Matteo Vitali"
+  assert_contains "$page" "Iscriviti su Meetup"
 }
 
 bash "$ROOT/scripts/fixture-oggi.sh"

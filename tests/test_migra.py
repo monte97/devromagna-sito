@@ -36,6 +36,17 @@ class SlugifyTest(unittest.TestCase):
         self.assertEqual(slug, "ciao-mondo")
         self.assertRegex(slug, SLUG_RE)
 
+    def test_taglia_all_ultimo_trattino(self):
+        slug = migra.slugify(
+            "Introduzione alla programmazione funzionale per lo sviluppatore"
+        )
+        self.assertEqual(
+            slug, "introduzione-alla-programmazione-funzionale-per-lo"
+        )
+        self.assertLessEqual(len(slug), 60)
+        self.assertNotIn("--", slug)
+        self.assertFalse(slug.endswith("-"))
+
 
 class ParseFolderDateTest(unittest.TestCase):
     def test_aaaammgg(self):

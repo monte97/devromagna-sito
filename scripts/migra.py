@@ -49,7 +49,11 @@ def slugify(title):
         testo = testo.replace(apostrofo, "")
     testo = re.sub(r"[^a-z0-9]+", "-", testo)
     testo = re.sub(r"-{2,}", "-", testo).strip("-")
-    testo = testo[:MAX_SLUG].strip("-")
+    if len(testo) > MAX_SLUG:
+        tagliato = testo[:MAX_SLUG]
+        if "-" in tagliato:
+            tagliato = tagliato[: tagliato.rfind("-")]
+        testo = tagliato.strip("-")
     return testo
 
 

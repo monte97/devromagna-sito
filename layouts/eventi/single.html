@@ -22,14 +22,22 @@
           {{ with $imgs }}
             <div class="gallery evento-gallery">
               {{ range . }}
-                {{ $small := .Resize "600x" }}
-                {{ $big := .Resize "1600x" }}
-                <a href="{{ $big.RelPermalink }}"><img src="{{ $small.RelPermalink }}" alt="" width="{{ $small.Width }}" height="{{ $small.Height }}" loading="lazy"></a>
+                {{ if strings.HasSuffix .Name ".svg" }}
+                  <a href="{{ .RelPermalink }}"><img src="{{ .RelPermalink }}" alt="" width="1200" height="800" loading="lazy"></a>
+                {{ else }}
+                  {{ $small := .Resize "600x" }}
+                  {{ $big := .Resize "1600x" }}
+                  <a href="{{ $big.RelPermalink }}"><img src="{{ $small.RelPermalink }}" alt="" width="{{ $small.Width }}" height="{{ $small.Height }}" loading="lazy"></a>
+                {{ end }}
               {{ end }}
             </div>
           {{ end }}
           <div class="evento-testo">
-            {{ .Content }}
+            {{ if .Content }}
+              {{ .Content }}
+            {{ else }}
+              {{ with .Params.abstract }}<p class="evento-abstract">{{ . }}</p>{{ end }}
+            {{ end }}
           </div>
           {{ with .Params.attendees }}<p class="evento-presenti">{{ . }} presenti</p>{{ end }}
           {{ if or .Params.slides .Params.repo .Params.video }}
