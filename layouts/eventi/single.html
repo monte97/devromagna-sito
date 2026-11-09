@@ -41,6 +41,10 @@
           </div>
           {{ if eq $stato "in-arrivo" }}
             {{ with .Params.meetup_url }}<p class="evento-cta"><a class="btn" href="{{ . }}">Iscriviti su Meetup</a></p>{{ end }}
+            <div class="evento-scarica">
+              <a class="btn btn-soft" href="{{ .RelPermalink }}locandina.pdf" download>Scarica la locandina (PDF)</a>
+              <p>Immagini per i social: <a href="{{ .RelPermalink }}locandina-16x9.png" download>16:9 per Meetup</a> · <a href="{{ .RelPermalink }}locandina-quadrata.png" download>quadrata per LinkedIn</a></p>
+            </div>
           {{ else }}
             {{ with .Params.attendees }}<p class="evento-presenti">{{ . }} presenti</p>{{ end }}
             {{ if or .Params.slides .Params.repo .Params.video }}
@@ -59,6 +63,9 @@
           {{ end }}
         </div>
         <aside class="evento-lato">
+          {{ if and (not $locandina) (eq $stato "in-arrivo") }}
+            <a href="{{ .RelPermalink }}locandina-16x9.png" data-lightbox="locandina"><img class="evento-locandina" src="{{ .RelPermalink }}locandina-16x9.png" width="1920" height="1080" alt="Locandina dell'evento" onerror="this.parentNode.remove()"></a>
+          {{ end }}
           {{ with $locandina }}
             {{ $img := .Resize "800x webp q82" }}
             {{ $grande := .Resize "1600x webp q85" }}

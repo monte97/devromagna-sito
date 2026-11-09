@@ -17,6 +17,13 @@ capitalizeListTitles = false
     speakers = "/speaker/:slug/"
     host = "/ospiti/:slug/"
 
+[outputFormats]
+  [outputFormats.locandina]
+    mediaType = "text/html"
+    baseName = "locandina"
+    notAlternative = true
+    permalinkable = false
+
 [params]
   # Loghi degli ospiti: registrati in data/ospiti.yaml, mostrati solo quando questo è true
   mostra_loghi = false

@@ -1304,3 +1304,8 @@ main > :last-child:not(.evento-body):not(.evento) {
   .home-hero-griglia { grid-template-columns: 1fr; }
   .home-hero-logo { order: -1; max-width: 220px; justify-self: start; }
 }
+
+/* Scarica la locandina */
+.evento-scarica { margin-top: 20px; }
+.evento-scarica p { margin: 10px 0 0; font-size: 14px; color: var(--ink-muted); }
+.evento-scarica p a { color: var(--magenta); }

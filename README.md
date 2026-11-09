@@ -32,6 +32,28 @@ attendees:            # numero di presenti, dopo la serata
 
 Fino al giorno della serata la pagina è un annuncio con il bottone di Meetup. Dal giorno dopo diventa il post: mostra le foto della cartella, il testo sotto il frontmatter e i link a slide, repo e video. Lo stato si calcola dalla data, non va scritto.
 
+## Locandine
+
+Per ogni evento in arrivo la pubblicazione genera da sola tre file, nella cartella dell'evento sul sito:
+
+- `locandina-16x9.png` (1920×1080), per la copertina dell'evento su Meetup e su LinkedIn;
+- `locandina-quadrata.png` (1080×1080), per il post LinkedIn;
+- `locandina.pdf` (A4), per la stampa.
+
+Si scaricano dal bottone "Scarica la locandina" nella pagina dell'evento. Dentro ci sono titolo, speaker, data, ora, sede e città, e un QR code verso la pagina Meetup dell'evento (o del gruppo, se il link manca). Se una riga manca nel file dell'evento, sulla locandina non compare.
+
+Titolo troppo lungo? Si rimpicciolisce da solo; per una versione più corta solo sulla locandina, aggiungi `titolo_locandina: "..."` al frontmatter.
+
+Per provarle in locale prima del push:
+
+```bash
+pip install playwright && python -m playwright install chromium   # una volta sola
+hugo -d /tmp/sito/out && python3 scripts/locandine.py /tmp/sito/out
+open /tmp/sito/out/eventi/<cartella-evento>/
+```
+
+La grafica sta in `layouts/eventi/single.locandina.html` e `assets/css/locandina.css`.
+
 ## Dopo la serata
 
 Le foto e la locandina si aprono ingrandite in sovrimpressione (frecce e Esc da tastiera).

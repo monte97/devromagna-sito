@@ -360,6 +360,28 @@ check_loghi_nascosti() {
   rm -rf "$out"
 }
 
+check_locandine() {
+  # Pagina della locandina per ogni evento, con il QR verso il link Meetup dell'evento
+  local loc="$OUT/eventi/2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire/locandina.html"
+  assert_file "$loc"
+  assert_contains "$loc" "loc-qr"
+  assert_contains "$loc" "meetup.com/devromagna/events/317143074"
+  assert_contains "$loc" "Matteo Vitali"
+  # Senza sede, speaker e link Meetup: niente righe vuote, QR verso il gruppo
+  loc="$OUT/eventi/2099-02-01-titolo-lunghissimo/locandina.html"
+  assert_file "$loc"
+  assert_not_contains "$loc" "loc-dove"
+  assert_not_contains "$loc" "loc-speaker"
+  assert_contains "$loc" "https://www.meetup.com/devromagna/"
+  assert_not_contains "$loc" "devromagna/events/"
+  # Bottone di download solo negli eventi in arrivo
+  assert_contains "$OUT/eventi/2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire/index.html" "locandina.pdf"
+  assert_not_contains "$OUT/eventi/2018-05-25-passato-nudo/index.html" "locandina.pdf"
+  # La pagina della locandina non finisce nella sitemap né nelle liste
+  grep -q 'locandina.html' "$OUT/sitemap.xml" && fail "locandina nella sitemap"
+  return 0
+}
+
 bash "$ROOT/scripts/fixture-oggi.sh"
 build_site
 check_global
@@ -373,6 +395,7 @@ check_speaker_ospiti
 check_menu_attivo
 check_evento_arricchito
 check_loghi_nascosti
+check_locandine
 assert_contains "$OUT/index.html" "linkedin.com/company/devromagna"
 
 printf 'PASS\n'

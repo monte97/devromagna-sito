@@ -1,0 +1,61 @@
+{{- /* Locandina dell'evento (direzione A). Una pagina sola per tre formati, scelti con ?formato=quadrata|16x9|a4.
+       scripts/locandine.py la apre a quelle dimensioni e la salva in PNG e PDF. */ -}}
+{{- $titolo := .Params.titolo_locandina | default .Title -}}
+{{- $speaker := slice -}}{{- range .GetTerms "speakers" }}{{ $speaker = $speaker | append .Title }}{{ end -}}
+{{- $ospite := .Params.host -}}
+{{- $citta := .Params.city -}}
+{{- $link := .Params.meetup_url | default site.Params.meetup -}}
+{{- $css := resources.Get "css/locandina.css" | minify | fingerprint -}}
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Locandina · {{ .Title }}</title>
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body class="formato-quadrata">
+  <main class="locandina">
+    <img class="loc-simbolo" src="{{ "img/logo-simbolo.png" | relURL }}" alt="">
+    <p class="loc-kicker">Meetup gratuito · DevRomagna</p>
+    <div class="loc-titolo-box">
+      <h1 class="loc-titolo">{{ $titolo }}</h1>
+      {{- with $speaker }}
+      <p class="loc-speaker">con <b>{{ delimit . ", " " e " }}</b></p>
+      {{- end }}
+    </div>
+    <footer class="loc-fascia">
+      <div class="loc-info">
+        <p class="loc-data"><b>{{ time.Format "Monday 2 January" .Date }}</b> · ore {{ .Date.Format "15:04" }}</p>
+        {{- if or $ospite $citta }}
+        <p class="loc-dove">{{ with $ospite }}{{ . }}{{ end }}{{ if and $ospite $citta }}, {{ end }}{{ with $citta }}{{ . }}{{ end }}</p>
+        {{- end }}
+      </div>
+      {{- with images.QR $link (dict "targetDPI" 300 "level" "medium") }}
+      <div class="loc-qr">
+        <img src="{{ .RelPermalink }}" alt="QR code verso {{ $link }}" data-link="{{ $link }}">
+        <span>Iscriviti</span>
+      </div>
+      {{- end }}
+    </footer>
+  </main>
+  <script>
+    (function () {
+      var f = new URLSearchParams(location.search).get('formato');
+      if (f === '16x9' || f === 'a4' || f === 'quadrata') document.body.className = 'formato-' + f;
+      // titolo: rimpicciolisce finché non sta nel suo spazio
+      var box = document.querySelector('.loc-titolo-box');
+      var h = document.querySelector('.loc-titolo');
+      var size = parseFloat(getComputedStyle(h).fontSize);
+      function adatta() {
+        while ((box.scrollHeight > box.clientHeight + 2 || h.scrollWidth > box.clientWidth + 2) && size > 18) {
+          size -= 2;
+          h.style.fontSize = size + 'px';
+        }
+        document.body.setAttribute('data-pronta', '1');
+      }
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(adatta); else adatta();
+    })();
+  </script>
+</body>
+</html>

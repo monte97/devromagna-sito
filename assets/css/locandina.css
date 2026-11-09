@@ -1,0 +1,132 @@
+/* Locandina degli eventi, direzione A: tutto magenta, titolo protagonista, fascia scura con data, sede e QR. */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("../fonts/bricolage-grotesque-latin-800-normal.woff2") format("woff2");
+  font-weight: 800;
+  font-display: block;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../fonts/work-sans-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../fonts/work-sans-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-display: block;
+}
+
+:root {
+  --magenta: #c33d6e;
+  --ink: #1f1416;
+  --rosa: #ffb3cc;
+  --w: 1080px;
+  --h: 1080px;
+  --u: 10.8px; /* 1% del lato corto: tutte le misure scalano con il formato */
+}
+.formato-16x9 { --w: 1920px; --h: 1080px; --u: 10.8px; }
+.formato-a4 { --w: 210mm; --h: 297mm; --u: 2.1mm; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+@page { size: A4; margin: 0; }
+
+.locandina {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: var(--w);
+  height: var(--h);
+  padding: calc(var(--u) * 7) calc(var(--u) * 7) 0;
+  overflow: hidden;
+  background: var(--magenta);
+  color: #fff;
+  font-family: "Work Sans", sans-serif;
+}
+.loc-simbolo {
+  display: block;
+  align-self: flex-start;
+  width: auto;
+  height: calc(var(--u) * 9);
+}
+.loc-kicker {
+  margin: calc(var(--u) * 4.5) 0 0;
+  font-size: calc(var(--u) * 2.2);
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .92;
+}
+.loc-titolo-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: calc(var(--u) * 2) 0 calc(var(--u) * 4);
+  overflow: hidden;
+}
+.loc-titolo {
+  margin: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: calc(var(--u) * 8.5);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.loc-speaker {
+  margin: calc(var(--u) * 3) 0 0;
+  font-size: calc(var(--u) * 3.6);
+}
+.loc-fascia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--u) * 4);
+  margin: 0 calc(var(--u) * -7);
+  padding: calc(var(--u) * 4) calc(var(--u) * 7);
+  background: var(--ink);
+}
+.loc-info p { margin: 0; }
+.loc-data {
+  font-size: calc(var(--u) * 3.6);
+}
+.loc-data b { font-weight: 600; }
+.loc-dove {
+  margin-top: calc(var(--u) * 1) !important;
+  font-size: calc(var(--u) * 2.8);
+  opacity: .85;
+}
+.loc-qr {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--u) * .8);
+  padding: calc(var(--u) * 1.2);
+  border-radius: calc(var(--u) * 1.6);
+  background: #fff;
+  color: var(--ink);
+}
+.loc-qr img {
+  display: block;
+  width: calc(var(--u) * 14);
+  height: calc(var(--u) * 14);
+  image-rendering: pixelated;
+}
+.loc-qr span {
+  font-size: calc(var(--u) * 1.8);
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* 16:9: più largo che alto, titolo su più colonne di spazio */
+.formato-16x9 .loc-titolo { font-size: calc(var(--u) * 9.5); }
+.formato-16x9 .loc-qr img { width: calc(var(--u) * 13); height: calc(var(--u) * 13); }
+
+/* A4 per la stampa */
+.formato-a4 .loc-titolo { font-size: calc(var(--u) * 10); }
