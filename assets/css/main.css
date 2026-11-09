@@ -223,6 +223,7 @@ strong {
 }
 
 .evento-hero h1 {
+  margin-top: 16px;
   font-size: clamp(2.25rem, 5.5vw, 4rem);
 }
 

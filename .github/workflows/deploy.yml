@@ -12,6 +12,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  TZ: Europe/Rome
+
 concurrency:
   group: pages
   cancel-in-progress: false
