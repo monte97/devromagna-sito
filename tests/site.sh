@@ -134,10 +134,41 @@ check_task3() {
   assert_contains "$page" "In arrivo"
 }
 
+check_task4() {
+  local index="$OUT/index.html"
+  assert_file "$index"
+
+  assert_contains "$index" "Gli sviluppatori romagnoli fanno rete"
+  assert_contains "$index" "Ci incontriamo per discutere di piattaforme"
+  assert_contains "$index" "Proponi un talk"
+  assert_contains "$index" "Ospitaci o sostienici"
+  assert_contains "$index" "Incontri passati"
+  assert_contains "$index" "sessionize.com/devromagna"
+  assert_contains "$index" "clicks.meetup.com"
+  assert_contains "$index" ".NET Foundation"
+  assert_contains "$index" "Invoicetronic"
+  assert_not_contains "$index" "incotriamo"
+  assert_contains "$index" "2099-01-15-futuro"
+}
+
+check_task4_vuoto() {
+  local out index
+  out="$(mktemp -d)"
+  ( cd "$ROOT" && hugo --gc --minify --environment test-vuoto -d "$out" ) \
+    || fail "build del sito (test-vuoto) fallita"
+  index="$out/index.html"
+  assert_file "$index"
+  assert_contains "$index" "Prossima serata in preparazione"
+  assert_contains "$index" "meetup.com/devromagna"
+  rm -rf "$out"
+}
+
 bash "$ROOT/scripts/fixture-oggi.sh"
 build_site
 check_global
 check_task2
 check_task3
+check_task4
+check_task4_vuoto
 
 printf 'PASS\n'

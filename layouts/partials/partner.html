@@ -1,0 +1,29 @@
+{{- $partner := hugo.Data.partner | default slice -}}
+{{- $tipi := slice
+  (dict "chiave" "sponsor" "titolo" "Sponsor")
+  (dict "chiave" "media-partner" "titolo" "Media partner")
+  (dict "chiave" "affiliazione" "titolo" "Affiliazioni") -}}
+{{- if $partner }}
+<section class="home-partner">
+  <div class="container">
+    <h2>Partner</h2>
+    {{ range $tipo := $tipi }}
+      {{ $gruppo := where $partner "type" $tipo.chiave }}
+      {{ if $gruppo }}
+      <div class="partner-gruppo">
+        <h3>{{ $tipo.titolo }}</h3>
+        <ul class="partner-lista">
+          {{ range $gruppo }}
+          <li>
+            {{ with .url }}<a href="{{ . }}">{{ end }}
+            <img src="{{ .logo | relURL }}" alt="{{ .name }}" loading="lazy">
+            {{ with .url }}</a>{{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{- end }}

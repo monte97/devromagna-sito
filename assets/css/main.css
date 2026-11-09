@@ -447,3 +447,320 @@ strong {
     animation-iteration-count: 1 !important;
   }
 }
+
+.home-hero .btn {
+  background: var(--ink);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.home-hero .btn:hover,
+.home-hero .btn:focus-visible {
+  background: #000;
+  color: var(--white);
+}
+
+.hero-eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-sottotitolo {
+  max-width: 560px;
+}
+
+.hero-cta {
+  margin-top: 28px;
+  margin-bottom: 0;
+}
+
+.home-prossimo {
+  padding-block: 32px 0;
+}
+
+.prossimo-evento {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+  padding: clamp(20px, 4vw, 36px);
+  border-radius: var(--radius-lg);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.prossimo-data {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 112px;
+  border-radius: 20px;
+  background: var(--magenta);
+}
+
+.prossimo-mese {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.prossimo-giorno {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.prossimo-testo {
+  flex: 1;
+  min-width: 220px;
+}
+
+.prossimo-testo h2 {
+  margin-bottom: 8px;
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+}
+
+.prossimo-testo h2 a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.prossimo-testo h2 a:hover,
+.prossimo-testo h2 a:focus-visible {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.prossimo-etichetta {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f39bbb;
+}
+
+.prossimo-meta {
+  margin-bottom: 0;
+  font-size: 16px;
+  color: var(--footer-text);
+}
+
+.prossimo-vuoto h2 {
+  color: var(--white);
+}
+
+.home-prossimo .btn {
+  flex-shrink: 0;
+  background: var(--white);
+  color: var(--ink);
+}
+
+.home-prossimo .btn:hover,
+.home-prossimo .btn:focus-visible {
+  background: var(--pink);
+  color: var(--ink);
+}
+
+.home-blocchi {
+  padding-block: 28px 0;
+}
+
+.home-blocchi-griglia {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.home-blocco {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 52px);
+}
+
+.home-blocco h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.home-blocco p {
+  font-size: 18px;
+}
+
+.blocco-etichetta {
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 10px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.blocco-azione {
+  margin-top: auto;
+  padding-top: 16px;
+  margin-bottom: 0;
+}
+
+.home-blocco-proponi {
+  background: var(--magenta);
+  color: var(--white);
+}
+
+.home-blocco-proponi a:not(.btn) {
+  color: var(--white);
+}
+
+.home-blocco-proponi .blocco-etichetta {
+  background: var(--white);
+  color: var(--magenta);
+}
+
+.home-blocco-proponi .btn {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.home-blocco-proponi .btn:hover,
+.home-blocco-proponi .btn:focus-visible {
+  background: #000;
+  color: var(--white);
+}
+
+.home-blocco-ospitaci {
+  background: var(--pink-muted);
+  color: var(--ink);
+}
+
+.home-blocco-ospitaci .blocco-etichetta {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.home-blocco-ospitaci .btn {
+  background: var(--magenta);
+  color: var(--white);
+}
+
+.home-passati {
+  padding-block: 72px 0;
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.section-link {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.evento-card h3 {
+  margin: 8px 0;
+  font-size: clamp(1.25rem, 2vw, 1.4rem);
+}
+
+.evento-card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.evento-card h3 a:hover,
+.evento-card h3 a:focus-visible {
+  color: var(--magenta-dark);
+}
+
+.evento-card-data {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--magenta);
+}
+
+.evento-card-meta {
+  margin-bottom: 0;
+  font-size: 15px;
+  color: var(--ink-muted);
+}
+
+.home-chi-siamo {
+  padding-block: 72px 0;
+}
+
+.home-chi-siamo-testo {
+  background: var(--pink-muted);
+}
+
+.home-chi-siamo-testo h2 {
+  margin-top: 32px;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.home-chi-siamo-testo h2:first-child {
+  margin-top: 0;
+}
+
+.home-chi-siamo-testo p {
+  color: #4a3a3f;
+}
+
+.home-partner {
+  padding-block: 72px;
+}
+
+.partner-gruppo {
+  margin-top: 28px;
+}
+
+.partner-gruppo h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.partner-lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 48px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partner-lista img {
+  width: auto;
+  max-height: 56px;
+}
+
+@media (max-width: 860px) {
+  .home-blocchi-griglia {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .prossimo-evento {
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,40 @@
+{{- $futuri := slice -}}
+{{- range (where site.RegularPages "Section" "eventi").ByDate -}}
+  {{- if eq (partial "evento-stato.html" .) "in-arrivo" -}}
+    {{- $futuri = $futuri | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $oggi := now.Format "2006-01-02" -}}
+{{- $prossimo := false -}}
+{{- range $futuri -}}
+  {{- if and (not $prossimo) (gt (.Date.Format "2006-01-02") $oggi) -}}
+    {{- $prossimo = . -}}
+  {{- end -}}
+{{- end -}}
+<section class="home-prossimo">
+  <div class="container">
+    {{- with $prossimo }}
+    <div class="prossimo-evento">
+      <div class="prossimo-data" aria-hidden="true">
+        <span class="prossimo-mese">{{ .Date.Format "Jan" }}</span>
+        <span class="prossimo-giorno">{{ .Date.Format "2" }}</span>
+      </div>
+      <div class="prossimo-testo">
+        <p class="prossimo-etichetta">Prossimo evento</p>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ with (partial "evento-meta.html" .) }}<p class="prossimo-meta">{{ . }}</p>{{ end }}
+      </div>
+      <a class="btn" href="{{ with .Params.meetup_url }}{{ . }}{{ else }}{{ site.Params.meetup }}{{ end }}">Iscriviti su Meetup</a>
+    </div>
+    {{- else }}
+    <div class="prossimo-evento prossimo-vuoto">
+      <div class="prossimo-testo">
+        <p class="prossimo-etichetta">Prossimo evento</p>
+        <h2>Prossima serata in preparazione</h2>
+        <p>Stiamo organizzando il prossimo incontro. Intanto iscriviti alla community su Meetup per non perderti gli aggiornamenti.</p>
+      </div>
+      <a class="btn" href="{{ site.Params.meetup }}">Iscriviti su Meetup</a>
+    </div>
+    {{- end }}
+  </div>
+</section>

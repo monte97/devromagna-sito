@@ -1,0 +1,26 @@
+{{- $tenuti := slice -}}
+{{- range where site.RegularPages "Section" "eventi" -}}
+  {{- if eq (partial "evento-stato.html" .) "tenuto" -}}
+    {{- $tenuti = $tenuti | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $tenuti = sort $tenuti "Date" "desc" -}}
+<section class="home-passati">
+  <div class="container">
+    <div class="section-head">
+      <h2>Incontri passati</h2>
+      <a class="section-link" href="{{ "eventi/" | relURL }}">Tutti gli {{ len $tenuti }} incontri →</a>
+    </div>
+    {{ with first 6 $tenuti }}
+    <div class="grid-3">
+      {{ range . }}
+      <article class="card evento-card">
+        <p class="evento-card-data">{{ time.Format ":date_medium" .Date }}</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with (partial "evento-meta.html" .) }}<p class="evento-card-meta">{{ . }}</p>{{ end }}
+      </article>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>

@@ -1,0 +1,8 @@
+- name: ".NET Foundation"
+  type: sponsor
+  url: "https://dotnetfoundation.org"
+  logo: "img/partner/dot_net_foundation_logo.png"
+- name: "Invoicetronic"
+  type: sponsor
+  url: "https://invoicetronic.com"
+  logo: "img/partner/invoicetronic.svg"
