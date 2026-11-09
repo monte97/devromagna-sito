@@ -1279,3 +1279,28 @@ main > :last-child:not(.evento-body):not(.evento) {
   max-height: none;
   object-fit: contain;
 }
+
+/* Logo DevRomagna in evidenza */
+.brand-logo {
+  width: auto;
+  height: 44px;
+  border-radius: 0;
+}
+.brand-nome { font-size: 24px; letter-spacing: -.01em; }
+.brand-dev { color: var(--ink); }
+.home-hero-griglia {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+.home-hero-logo {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  justify-self: end;
+}
+@media (max-width: 900px) {
+  .home-hero-griglia { grid-template-columns: 1fr; }
+  .home-hero-logo { order: -1; max-width: 220px; justify-self: start; }
+}

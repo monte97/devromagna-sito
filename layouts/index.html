@@ -1,10 +1,13 @@
 {{ define "main" }}
 <section class="hero home-hero">
-  <div class="container">
+  <div class="container home-hero-griglia">
+    <div class="home-hero-testo">
     <p class="hero-eyebrow">{{ site.Params.subtitle }}</p>
     <h1>{{ site.Params.description }}</h1>
     <p class="hero-sottotitolo">Con DevRomagna vogliamo creare momenti di aggregazione, condivisione e divulgazione tra gli sviluppatori che lavorano o vivono nel territorio Romagnolo e dintorni.</p>
     <p class="hero-cta"><a class="btn" href="{{ site.Params.meetup }}">Iscriviti subito</a></p>
+    </div>
+    <img class="home-hero-logo" src="{{ "img/logo-trasparente.png" | relURL }}" alt="Logo di DevRomagna" width="636" height="485">
   </div>
 </section>
 
@@ -49,6 +52,9 @@
       <h2>La nostra community su Slack</h2>
       <p>Per rimanere sempre in contatto, scambiarci idee e supporto, abbiamo creato un canale Slack dedicato alla community. È uno spazio informale dove discutere di tecnologia, condividere esperienze, chiedere consigli e proporre nuove iniziative. Il canale è il punto di ritrovo virtuale dove continuare le conversazioni anche al di fuori dei meetup.</p>
       <p>Il canale è aperto a tutti i membri della community. <a href="{{ site.Params.slack }}">Unisciti al nostro Slack</a> per entrare in contatto con altri sviluppatori della zona.</p>
+
+      <h2>Seguici su LinkedIn</h2>
+      <p>Annunci delle serate, foto e slide dei talk passati: li trovi anche sulla <a href="{{ site.Params.linkedin }}">pagina LinkedIn di DevRomagna</a>.</p>
     </div>
   </div>
 </section>

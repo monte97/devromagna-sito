@@ -7,4 +7,13 @@
 #   sito: "https://..."
 #   bio: "Una riga su chi è."
 #   foto: "img/speaker/nome-cognome.jpg"   # in assets/img/speaker/
-{}
+# LinkedIn pubblicati dalle persone stesse su Meetup (profilo da host o descrizione dell'evento), 9/11/2026.
+"Andrea Verlicchi":
+  linkedin: "https://www.linkedin.com/in/andreaverlicchi/"
+"Davide Giunchi":
+  linkedin: "https://www.linkedin.com/in/davidegiunchi"
+  sito: "https://giunchi.net/"
+"Gabriele Santomaggio":
+  linkedin: "https://www.linkedin.com/in/santomaggio/"
+"Ugo Lattanzi":
+  linkedin: "https://www.linkedin.com/in/imperugo/"
