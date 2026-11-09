@@ -6,7 +6,8 @@
 {{- if $partner }}
 <section class="home-partner">
   <div class="container">
-    <h2>Partner</h2>
+    <h2>Chi ci sostiene</h2>
+    <p class="partner-intro">Grazie a chi rende possibili le nostre serate.</p>
     {{ range $tipo := $tipi }}
       {{ $gruppo := where $partner "type" $tipo.chiave }}
       {{ if $gruppo }}

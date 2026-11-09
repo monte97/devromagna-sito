@@ -781,3 +781,50 @@ strong {
   margin-top: 16px;
   margin-bottom: 0;
 }
+
+/* Sponsor in evidenza */
+.home-partner {
+  padding-block: 56px;
+  background: var(--white);
+  border-block: 1px solid var(--line);
+}
+.home-partner h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+.partner-intro {
+  margin-top: 8px;
+  color: var(--ink-muted);
+}
+.partner-lista img {
+  max-height: 80px;
+}
+
+/* Speaker e ospiti */
+.speaker-card h2 {
+  font-size: 1.35rem;
+  margin: 0;
+}
+.speaker-conteggio {
+  margin: 4px 0 12px;
+  color: var(--magenta);
+  font-weight: 600;
+  font-size: 14px;
+}
+.speaker-talk {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+}
+.speaker-talk li + li {
+  margin-top: 8px;
+}
+.speaker-talk span {
+  display: block;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+.ospite-card h2 {
+  font-size: 1.35rem;
+  margin: 0;
+}

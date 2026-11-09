@@ -122,7 +122,8 @@ check_task3() {
   assert_file "$page"
   assert_contains "$page" "Introduzione a Docker"
   assert_contains "$page" "Tenuto"
-  assert_not_contains "$page" "Speaker"
+  # solo nel contenuto (il menu contiene la voce "Speaker")
+  tr -d '\n' < "$page" | sed 's#.*<main##; s#</main>.*##' | grep -q "Speaker" && fail "etichetta Speaker in un evento senza speaker"
   assert_not_contains "$page" "gallery"
   assert_not_contains "$page" "Slide"
   assert_not_contains "$page" "undefined"
@@ -254,6 +255,41 @@ check_task6() {
   assert_contains "$page" "Iscriviti su Meetup"
 }
 
+check_speaker_ospiti() {
+  local page index sp_nicola sp_prossimi
+  # Pagina speaker: ognuno con i suoi talk, contati, anche i talk in arrivo
+  page="$OUT/speaker/index.html"
+  assert_file "$page"
+  assert_contains "$page" "Nicola Iarocci"
+  assert_contains "$page" "Matteo Galacci"
+  assert_contains "$page" "Matteo Vitali"
+  assert_contains "$page" "6 talk"
+  assert_contains "$page" "2026-11-12-argus-sbom-guard"
+  assert_not_contains "$page" '"Mi"'
+  # Nicola (6 talk) viene prima di chi ne ha uno solo
+  sp_nicola="$(tr -d '\n' < "$page" | grep -o 'Nicola Iarocci.*' | wc -c)"
+  sp_prossimi="$(tr -d '\n' < "$page" | grep -o 'Matteo Vitali.*' | wc -c)"
+  [ "$sp_nicola" -gt "$sp_prossimi" ] || fail "speaker non ordinati per numero di talk"
+
+  # Pagina di chi ci ha ospitato: dalle sedi degli eventi, niente "Online event" ne' indirizzi
+  page="$OUT/ospiti/index.html"
+  assert_file "$page"
+  assert_contains "$page" "Studio Mado"
+  assert_contains "$page" "Iprel Progetti Srl"
+  assert_contains "$page" "7 serate"
+  assert_not_contains "$page" "Online event"
+  assert_not_contains "$page" "Viale Principe"
+
+  # Navigazione e home: link alle pagine nuove, sponsor prima degli incontri passati
+  index="$OUT/index.html"
+  assert_contains "$index" "speaker/"
+  assert_contains "$index" "ospiti/"
+  local pos_partner pos_passati
+  pos_partner="$(tr -d '\n' < "$index" | grep -o 'home-partner.*' | wc -c)"
+  pos_passati="$(tr -d '\n' < "$index" | grep -o 'home-passati.*' | wc -c)"
+  [ "$pos_partner" -gt "$pos_passati" ] || fail "gli sponsor devono stare prima degli incontri passati"
+}
+
 bash "$ROOT/scripts/fixture-oggi.sh"
 build_site
 check_global
@@ -263,5 +299,6 @@ check_task4
 check_task4_vuoto
 check_task5
 check_task6
+check_speaker_ospiti
 
 printf 'PASS\n'

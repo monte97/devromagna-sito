@@ -26,3 +26,5 @@ Voci emerse durante la migrazione dal sito storico che richiedono una conferma p
 - Evento "Il tuo collega più produttivo scrive test inutili" (2026-05-13) presente solo fra gli eventi Meetup, senza materiali ne' voce nella pagina storica.
 - Evento "JavaScript è un tipo strano" (2026-10-08) presente solo fra gli eventi Meetup, senza materiali ne' voce nella pagina storica.
 - Evento "Designing a chat with your data agent on Databricks: Architecture and Guardrails" (2026-10-26) presente solo fra gli eventi Meetup, senza materiali ne' voce nella pagina storica.
+- 20 serate senza speaker nel frontmatter (Meetup non riportava una riga "Speaker:"): completare il campo `speakers` a mano, servono anche per la pagina Speaker.
+- Pagina "Chi ci ha ospitato": costruita dal campo `host` (la sede su Meetup); controllare i nomi delle aziende e unire eventuali doppioni.

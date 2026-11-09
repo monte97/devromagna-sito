@@ -24,11 +24,14 @@
         <p class="blocco-etichetta">Aziende e locali</p>
         <h2>Ospitaci o sostienici</h2>
         <p>Gli incontri sono gratuiti e organizzati da volontari, e ci spostiamo dove qualcuno ci ospita: aziende, bar, pub. Hai uno spazio per una serata o vuoi sostenerci come sponsor?</p>
+        <p>Grazie a <a href="{{ "ospiti/" | relURL }}">chi ci ha già ospitato</a>.</p>
         <p class="blocco-azione"><a class="btn" href="{{ site.Params.meetup }}">Contattaci</a></p>
       </div>
     </div>
   </div>
 </section>
+
+{{ partial "partner.html" . }}
 
 {{ partial "home-passati.html" . }}
 
@@ -50,5 +53,4 @@
   </div>
 </section>
 
-{{ partial "partner.html" . }}
 {{ end }}
