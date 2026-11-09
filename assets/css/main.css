@@ -135,6 +135,13 @@ strong {
 
 .hero a {
   color: var(--white);
+  text-decoration: underline;
+}
+
+.hero a:hover,
+.hero a:focus-visible {
+  color: var(--white);
+  text-decoration-thickness: 2px;
 }
 
 .tag {
@@ -258,7 +265,8 @@ strong {
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--pink-2);
+  color: var(--white);
+  text-decoration: underline;
 }
 
 .site-header .btn {
@@ -275,7 +283,8 @@ strong {
 }
 
 .site-header :focus-visible,
-.site-footer :focus-visible {
+.site-footer :focus-visible,
+.hero :focus-visible {
   outline-color: var(--white);
 }
 
