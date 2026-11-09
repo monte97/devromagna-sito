@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{ site.Home.RelPermalink }}">
+      <img class="brand-logo" src="{{ "img/logo.png" | relURL }}" alt="" width="44" height="44">
+      <span>devRomagna</span>
+    </a>
+    <nav class="site-nav" aria-label="Navigazione principale">
+      <a href="{{ "eventi/" | relURL }}">Eventi</a>
+      <a href="{{ "#chi-siamo" | relURL }}">Chi siamo</a>
+      <a href="{{ "#proponi" | relURL }}">Proponi un talk</a>
+      <a href="{{ "#ospitaci" | relURL }}">Ospitaci</a>
+      <a class="btn" href="{{ site.Params.meetup }}">Entra su Meetup</a>
+    </nav>
+  </div>
+</header>
