@@ -6,6 +6,7 @@ host: "Coopolis SpA - Sede operativa"
 abstract: "Gli LLM sono dappertutto ma... come possiamo connetterli alle nostre applicazioni?"
 meetup_url: "https://www.meetup.com/devromagna/events/308179204/"
 address: "Via Faentina, 69"
+end: 2025-06-11T20:00:00+02:00
 ---
 
 Gli LLM sono dappertutto ma... come possiamo connetterli alle nostre applicazioni?

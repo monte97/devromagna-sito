@@ -9,6 +9,7 @@ speakers:
   - "Simone D'Amico"
 address: "Via san Giovanni Bosco, 1"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.283570,11.883275"
+end: 2026-02-11T20:30:00+01:00
 ---
 
 Il passaggio da individual contributor a technical leader è un percorso di profonda trasformazione, ricco di sfide e opportunità di crescita.

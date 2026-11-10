@@ -6,6 +6,7 @@ abstract: "PHP è un linguaggio di programmazione che, tra chi non lo usa, soffr
 meetup_url: "https://www.meetup.com/devromagna/events/270877741/"
 speakers:
   - "Matteo Galacci"
+end: 2020-06-10T23:00:00+02:00
 ---
 
 ## Abstract

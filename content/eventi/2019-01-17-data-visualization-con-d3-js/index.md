@@ -11,6 +11,7 @@ slides: "slide.pdf"
 repo: "https://github.com/DevRomagna/eventi/tree/master/20190117-Data-Visualization-con-D3"
 address: "Strada Provinciale Selice, 51"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.379960,11.738026"
+end: 2019-01-17T22:30:00+01:00
 ---
 
 - Data: 17 Gennaio 2019

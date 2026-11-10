@@ -8,6 +8,7 @@ meetup_url: "https://www.meetup.com/devromagna/events/313916713/"
 speakers:
   - "Marco Mengoli"
 address: "Via dell'Arrigoni, 242"
+end: 2026-04-21T20:30:00+02:00
 ---
 
 Concetti di programmazione funzionale come functor e monad sono spesso percepiti come astratti o lontani dallo sviluppo quotidiano. Eppure, se lavori con C# (o altri linguaggi mainstream moderni), è molto probabile che tu li stia già usando, anche senza saperlo.

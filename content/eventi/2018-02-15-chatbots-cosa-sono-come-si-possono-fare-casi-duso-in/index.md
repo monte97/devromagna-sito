@@ -9,6 +9,7 @@ speakers:
   - "Claudio Comandini"
 slides: "slide.pdf"
 address: "Via Ravennate, 959"
+end: 2018-02-15T23:00:00+01:00
 ---
 
 Chatbots: cosa sono, come si possono fare, perchè potrebbero

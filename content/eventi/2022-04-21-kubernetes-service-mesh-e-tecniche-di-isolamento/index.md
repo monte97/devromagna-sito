@@ -9,6 +9,7 @@ speakers:
   - "Gabriele Santomaggio"
 address: "Viale Aurelio Saffi, 50/b"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.351665,11.703611"
+end: 2022-04-21T20:00:00+02:00
 ---
 
 Kubernetes offre molte features (forse anche troppe) per gestire il deployment di una applicazione. In questo talk cercheremo di fare un po' di chiarezza sui name-space, load-balancer, service mesh. Vedremo inoltre come ottimizzare il routing degli ip pubblici tramite TLS il tutto partendo da uno use-case reale.

@@ -6,6 +6,7 @@ host: "Iprel Progetti Srl"
 abstract: "Quando si parla di sistemi GenAI ad agenti, Python è spesso la scelta implicita. In realtà è possibile costruire e orchestrare sistemi multi-agent anche con .NET, utilizzando il nuovo Microsoft Agent Framework."
 meetup_url: "https://www.meetup.com/devromagna/events/312711883/"
 address: "Via Enrico Fermi, 13"
+end: 2026-01-21T20:30:00+01:00
 ---
 
 Quando si parla di sistemi GenAI ad agenti, Python è spesso la scelta implicita. In realtà è possibile costruire e orchestrare sistemi multi-agent anche con .NET, utilizzando il nuovo Microsoft Agent Framework.

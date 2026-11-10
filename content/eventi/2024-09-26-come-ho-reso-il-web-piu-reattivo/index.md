@@ -6,6 +6,7 @@ host: "Fondazione Banca Del Monte E Cassa Di Risparmio Faenza"
 abstract: "Guida pratica di come trovare ed evitare le interazioni lente."
 meetup_url: "https://www.meetup.com/devromagna/events/303426360/"
 address: "Via san Giovanni Bosco, 1"
+end: 2024-09-26T20:30:00+02:00
 ---
 
 **Guida pratica di come trovare ed evitare le interazioni lente.**

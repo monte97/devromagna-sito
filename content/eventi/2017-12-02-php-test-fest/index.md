@@ -6,6 +6,7 @@ host: "Ideato"
 abstract: "Hai sempre voluto contribuire al mondo PHP ma ti spaventava l'idea che le tue competenze non fossero sufficienti? Non c'è problema: diventa un contributor di PHP scrivendo test!"
 meetup_url: "https://www.meetup.com/devromagna/events/245283762/"
 address: "Piazza Sanguinetti, 106"
+end: 2017-12-02T17:30:00+01:00
 ---
 
 Hai sempre voluto contribuire al mondo PHP ma ti spaventava l'idea che le tue competenze non fossero sufficienti? Non c'è problema: diventa un contributor di PHP scrivendo test!

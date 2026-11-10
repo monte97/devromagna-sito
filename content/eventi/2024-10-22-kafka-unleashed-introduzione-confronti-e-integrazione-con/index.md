@@ -6,6 +6,7 @@ host: "Coopolis SpA - Sede operativa"
 abstract: "Questa sessione introduttiva esplorerà Confluent Kafka, illustrando i suoi concetti fondamentali e confrontandolo con altri sistemi di messaggistica come RabbitMQ e AWS SQS."
 meetup_url: "https://www.meetup.com/devromagna/events/303780376/"
 address: "Via Faentina, 69"
+end: 2024-10-22T20:00:00+02:00
 ---
 
 Questa sessione introduttiva esplorerà Confluent Kafka, illustrando i suoi concetti fondamentali e confrontandolo con altri sistemi di messaggistica come RabbitMQ e AWS SQS.

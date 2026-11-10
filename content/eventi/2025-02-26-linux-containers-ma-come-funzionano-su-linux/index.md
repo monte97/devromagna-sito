@@ -6,6 +6,7 @@ host: "Fondazione Banca Del Monte E Cassa Di Risparmio Faenza"
 abstract: "Warning: Talk ad alto contento NERD."
 meetup_url: "https://www.meetup.com/devromagna/events/305974494/"
 address: "Via san Giovanni Bosco, 1"
+end: 2025-02-26T20:00:00+01:00
 ---
 
 Warning: Talk ad alto contento NERD.

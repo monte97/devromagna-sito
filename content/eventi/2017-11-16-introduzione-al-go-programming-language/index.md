@@ -8,6 +8,7 @@ meetup_url: "https://www.meetup.com/devromagna/events/242114775/"
 speakers:
   - "Simone Gentili"
 address: "Via Galielo Galilei 6"
+end: 2017-11-16T23:30:00+01:00
 ---
 
 - Data: 11 Novembre 2017 

@@ -6,6 +6,7 @@ abstract: "🔥 Tema scottante del 2020: lo Smart Working! Chi lo pratica da ann
 meetup_url: "https://www.meetup.com/devromagna/events/274919052/"
 speakers:
   - "Alessandro Minoccheri"
+end: 2020-12-17T23:00:00+01:00
 ---
 
 Giovedí 17 Dicembre 2020

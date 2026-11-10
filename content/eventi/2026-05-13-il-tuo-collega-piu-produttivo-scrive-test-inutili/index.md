@@ -9,6 +9,7 @@ speakers:
   - "Francesco Montelli"
 address: "Via san Giovanni Bosco, 1"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.283570,11.883275"
+end: 2026-05-13T20:30:00+02:00
 ---
 
 La qualità dei test è diventata ancora più critica con l'avvento degli strumenti di AI generativa: più codice prodotto, più test generati, più copertura. Eppure i bug arrivano lo stesso. Il problema, spesso, non è nel codice che scriviamo ma nelle verifiche che costruiamo sopra.

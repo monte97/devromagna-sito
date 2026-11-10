@@ -9,6 +9,7 @@ speakers:
   - "Ugo Lattanzi"
   - "Nicola Iarocci"
 address: "Via Selice, 17/A"
+end: 2022-12-01T21:00:00+01:00
 ---
 
 .NET Conf 2022 si è appena conclusa con il lancio di .NET 7, l'ultima versione del framework open-source, cross-platform, ad alte prestazioni curato da Microsoft. Ci ritroviamo per dare un'occhiata alle tante novità introdotte da questo aggiornamento, approfondendo quelle che ci hanno colpito di più. Alcuni dei temi .NET 7 di cui parleremo sono:

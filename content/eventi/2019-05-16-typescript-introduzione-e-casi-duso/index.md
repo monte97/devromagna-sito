@@ -10,6 +10,7 @@ speakers:
 slides: "slide.pdf"
 repo: "https://github.com/DevRomagna/eventi/tree/master/20190516-TypeScript-introduzione-e-casi-d%27uso"
 address: "Via Selice, 51"
+end: 2019-05-16T22:30:00+02:00
 ---
 
 - Data: 16 Maggio 2019

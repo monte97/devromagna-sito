@@ -8,6 +8,7 @@ meetup_url: "https://www.meetup.com/devromagna/events/285149575/"
 speakers:
   - "Andrea Verlicchi"
 address: "Viale Aurelio Saffi, 50/b"
+end: 2022-05-19T20:00:00+02:00
 ---
 
 Vi illustro una tecnica ed un tool per ottimizzare le immagini a partire dai dati di risoluzione e densità schermo sui siti web. I risultati sono:

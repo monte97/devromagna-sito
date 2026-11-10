@@ -9,6 +9,7 @@ speakers:
   - "Giulia Naponiello"
   - "Andrea Verlicchi"
 address: "Via Selice 51"
+end: 2026-03-17T20:30:00+01:00
 ---
 
 La diversità e l'inclusione sono temi cruciali nel settore tecnologico. Come si traducono in azioni concrete nella vita di tutti i giorni di uno sviluppatore, di un designer o di un manager?

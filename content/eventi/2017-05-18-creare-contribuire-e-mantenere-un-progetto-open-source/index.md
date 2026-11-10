@@ -10,6 +10,7 @@ speakers:
   - "Gabriele Santomaggio"
   - "Nicola Iarocci"
 address: "Piazza Sanguinetti, 106"
+end: 2017-05-18T23:30:00+02:00
 ---
 
 Panel di discussione in cui parleremo di Open Source dal punto di un developer che vuole cominciare a contribuire ad uno o più progetti, o crearne di nuovi. Saranno presenti autori, contributor e/o maintainer di progetti open source già affermati con i quali confrontarsi. Se hai domande o argomenti che ti piacerebbe discutere nel corso dell'evento vai qui (https://github.com/DevRomagna/eventi/issues/4) e aggiungile!

@@ -7,6 +7,7 @@ meetup_url: "https://www.meetup.com/devromagna/events/258490013/"
 slides: "slide.pdf"
 address: "Viale Principe Amedeo, 7"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.066086,12.571594"
+end: 2019-03-20T22:30:00+01:00
 ---
 
 Slide in pdf.

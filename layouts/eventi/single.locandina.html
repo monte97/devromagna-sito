@@ -26,9 +26,17 @@
     </div>
     <footer class="loc-fascia">
       <div class="loc-info">
-        <p class="loc-data"><b>{{ time.Format "Monday 2 January" .Date }}</b> · ore {{ .Date.Format "15:04" }}</p>
+        <div class="loc-blocco">
+          <p class="loc-etichetta">Quando</p>
+          <p class="loc-valore">{{ time.Format "Monday 2 January" .Date }}</p>
+          <p class="loc-sotto">ore {{ .Date.Format "15:04" }}{{ with .Params.end }}{{ $fine := time.AsTime . }}–{{ $fine.Format "15:04" }}{{ end }}</p>
+        </div>
         {{- if or $ospite $citta }}
-        <p class="loc-dove">{{ with $ospite }}{{ . }}{{ end }}{{ if and $ospite $citta }}, {{ end }}{{ with $citta }}{{ . }}{{ end }}</p>
+        <div class="loc-blocco loc-dove">
+          <p class="loc-etichetta">Dove</p>
+          <p class="loc-valore">{{ with $ospite }}{{ . }}{{ else }}{{ $citta }}{{ end }}</p>
+          {{- if and $ospite $citta }}<p class="loc-sotto">{{ $citta }}</p>{{ end }}
+        </div>
         {{- end }}
       </div>
       {{- with images.QR $link (dict "targetDPI" 300 "level" "medium") }}

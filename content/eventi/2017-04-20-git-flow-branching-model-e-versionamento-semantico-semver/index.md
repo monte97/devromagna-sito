@@ -8,6 +8,7 @@ meetup_url: "https://www.meetup.com/devromagna/events/239110404/"
 speakers:
   - "Simone Gentili"
 address: "Via Galielo Galilei 6"
+end: 2017-04-20T23:30:00+02:00
 ---
 
 - Data: 20 Aprile 2017 

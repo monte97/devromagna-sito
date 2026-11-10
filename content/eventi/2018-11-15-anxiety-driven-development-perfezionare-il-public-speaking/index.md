@@ -6,6 +6,7 @@ host: "Studio Mado"
 abstract: "Due talk nella stessa serata!"
 meetup_url: "https://www.meetup.com/devromagna/events/255195925/"
 address: "Via Galielo Galilei 6"
+end: 2018-11-15T23:00:00+01:00
 ---
 
 Due talk nella stessa serata!

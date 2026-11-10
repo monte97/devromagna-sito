@@ -9,6 +9,7 @@ speakers:
   - "Matteo Galacci"
 address: "Via Galileo Galilei, 6"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.296080,11.860612"
+end: 2022-09-22T21:00:00+02:00
 ---
 
 CQRS+ES (Command Query Responsibility Segregation + Event Sourcing) è un pattern che permette la segregazione delle operazioni di lettura da quelle di scrittura, attraverso l'emissione e l'ascolto di eventi al fine di gestire lo stato ultimo di un Aggregato. Gli eventi sono per loro natura immutabili; ciò che è successo in passato, non cambia. Come si può sposare questo principio con la GDPR?

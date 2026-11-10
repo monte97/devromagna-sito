@@ -8,6 +8,7 @@ speakers:
   - "Luca Canella"
 slides: "https://github.com/DevRomagna/eventi/blob/master/26032020-Neo4jGDBMS/GDBMS%20-%2026032020.pptx"
 repo: "https://github.com/DevRomagna/eventi/tree/master/26032020-Neo4jGDBMS"
+end: 2020-03-26T23:00:00+01:00
 ---
 
 * Data: 26 marzo 2020

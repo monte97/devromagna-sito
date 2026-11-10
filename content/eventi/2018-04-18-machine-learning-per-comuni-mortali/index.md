@@ -9,6 +9,7 @@ speakers:
   - "Marco Radossi"
 slides: "slide.pdf"
 address: "Piazza Sanguinetti, 106"
+end: 2018-04-18T22:30:00+02:00
 ---
 
 - Data: 18 Aprile 2018

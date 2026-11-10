@@ -8,6 +8,7 @@ meetup_url: "https://www.meetup.com/devromagna/events/245313829/"
 speakers:
   - "Francesco Strazzullo"
 address: "Piazza Sanguinetti, 106"
+end: 2018-01-18T23:00:00+01:00
 ---
 
 - Data: 18 Gennaio 2018

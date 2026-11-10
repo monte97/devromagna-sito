@@ -16,7 +16,7 @@ def pagina(event_id: str, descrizione: str) -> str:
             "venue": {"__ref": "Venue:1"},
             "featuredEventPhoto": {"__ref": "PhotoInfo:9"},
         },
-        "Venue:1": {"address": "Via Roma, 1", "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=44,11"},
+        "Venue:1": {"name": "Sala Prova", "city": "Faenza", "address": "Via Roma, 1", "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=44,11"},
         "PhotoInfo:9": {"highResUrl": "https://example.invalid/highres_9.jpeg"},
     }
     dati = {"props": {"pageProps": {"__APOLLO_STATE__": stato}}}
@@ -56,6 +56,8 @@ class ArricchisciTest(unittest.TestCase):
         self.assertNotIn("photos1.meetupstatic.com", testo)
         self.assertIn('address: "Via Roma, 1"', testo)
         self.assertIn("map_url:", testo)
+        self.assertIn('host: "Sala Prova"', testo)
+        self.assertIn('city: "Faenza"', testo)
 
     def test_corpo_esistente_non_viene_toccato(self):
         indice = self.bundle("2020-01-01-b", "\nScritto a mano.\n")

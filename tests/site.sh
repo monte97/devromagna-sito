@@ -367,6 +367,9 @@ check_locandine() {
   assert_contains "$loc" "loc-qr"
   assert_contains "$loc" "meetup.com/devromagna/events/317143074"
   assert_contains "$loc" "Matteo Vitali"
+  assert_contains "$loc" "Biblioteca Comunale Antonio Baldini"
+  assert_contains "$loc" "Santarcangelo di Romagna"
+  assert_contains "$loc" "20:00–21:00"
   # Senza sede, speaker e link Meetup: niente righe vuote, QR verso il gruppo
   loc="$OUT/eventi/2099-02-01-titolo-lunghissimo/locandina.html"
   assert_file "$loc"

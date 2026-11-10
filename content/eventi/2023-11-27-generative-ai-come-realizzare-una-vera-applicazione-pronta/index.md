@@ -10,6 +10,7 @@ speakers:
   - "Nicolò Boschi"
 address: "Via san Giovanni Bosco, 1"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.283570,11.883275"
+end: 2023-11-27T21:00:00+01:00
 ---
 
 La Generative AI (ChatGPT, OpenAI...) sta esplodendo, si stanno moltiplicando le idee e le proposte per realizzare assistenti

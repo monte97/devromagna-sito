@@ -7,6 +7,7 @@ abstract: "Jest (https://facebook.github.io/jest/) è usato da Facebook per test
 meetup_url: "https://www.meetup.com/devromagna/events/238796165/"
 repo: "https://github.com/DevRomagna/eventi/tree/master/20170330-JestFramework"
 address: "Via Provinciale Selice 42c"
+end: 2017-03-30T23:30:00+02:00
 ---
 
 - Data: 30 marzo 2017 

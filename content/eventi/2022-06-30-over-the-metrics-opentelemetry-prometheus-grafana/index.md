@@ -9,6 +9,7 @@ speakers:
   - "Ugo Lattanzi"
 address: "Via Galileo Galilei, 6"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.296080,11.860612"
+end: 2022-06-30T21:00:00+02:00
 ---
 
 Puoi dire di essere realmente veloce solo nel momento in cui misuri le performance del tuo applicativo nelle varie condizioni. In questa sessione vediamo come incrociare OpenTelemetry, Prometheus e Grafana all'interno di un cluster Kubernetes per avere un APM e delle dashboards sullo stato di salute delle vostre applicazioni.

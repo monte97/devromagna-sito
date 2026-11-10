@@ -8,6 +8,7 @@ meetup_url: "https://www.meetup.com/devromagna/events/257990206/"
 speakers:
   - "Simone Gentili"
 address: "Via Galielo Galilei 6"
+end: 2019-02-21T22:30:00+01:00
 ---
 
 - [sensorario/docker-elasticsearch](https://github.com/sensorario/docker-elasticsearch)

@@ -10,6 +10,7 @@ speakers:
 slides: "slide.pdf"
 repo: "https://github.com/DevRomagna/eventi/tree/master/20180525-Inotroduzione-a-docker"
 address: "Via Galielo Galilei 6"
+end: 2018-05-25T22:30:00+02:00
 ---
 
 I container, ed in particolare Docker, sono uno dei tormentoni IT più diffusi da 5 anni a questa parte. In questa serata faremo una rapida analisi delle tecnologie utilizzate da Docker, per capire come funziona e come differisce da una VM. Passeremo poi all'installazione di Docker su Windows e Linux, come utilizzarlo con gli argomenti più comuni della sua command line, come utilizzare immagini già presenti nell'hub, modificarle per le nostre esigenze e pubblicarle su un registry privato. Infine valuteremo alcuni consigli, best-practice e vedremo come "l'ecosistema container" si sta evolvendo in questi ultimi anni.

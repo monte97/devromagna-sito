@@ -7,6 +7,7 @@ abstract: "Se sviluppi per il web, JavaScript è forse il linguaggio che usi di 
 meetup_url: "https://www.meetup.com/devromagna/events/316683852/"
 address: "Via Enrico Fermi, 13"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.373410,11.720875"
+end: 2026-10-08T20:30:00+02:00
 ---
 
 Se sviluppi per il web, JavaScript è forse il linguaggio che usi di più. Ma è anche il linguaggio che non smette mai di darci sorprese. Quante volte abbiamo detto: "Ah, allora è così che fa!", o "Non sapevo che quest'API esistesse!", o solo "Questo è proprio strano..."

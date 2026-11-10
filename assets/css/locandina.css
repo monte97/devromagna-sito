@@ -90,15 +90,30 @@ html, body { margin: 0; padding: 0; }
   padding: calc(var(--u) * 4) calc(var(--u) * 7);
   background: var(--ink);
 }
-.loc-info p { margin: 0; }
-.loc-data {
-  font-size: calc(var(--u) * 3.6);
+.loc-info {
+  display: flex;
+  gap: calc(var(--u) * 5);
+  min-width: 0;
 }
-.loc-data b { font-weight: 600; }
-.loc-dove {
-  margin-top: calc(var(--u) * 1) !important;
+.loc-blocco { min-width: 0; }
+.loc-blocco p { margin: 0; }
+.loc-etichetta {
+  font-size: calc(var(--u) * 1.8);
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rosa);
+}
+.loc-valore {
+  margin-top: calc(var(--u) * .6) !important;
+  font-size: calc(var(--u) * 3.4);
+  font-weight: 600;
+  line-height: 1.15;
+}
+.loc-sotto {
+  margin-top: calc(var(--u) * .4) !important;
   font-size: calc(var(--u) * 2.8);
-  opacity: .85;
+  opacity: .9;
 }
 .loc-qr {
   flex: none;
@@ -130,3 +145,6 @@ html, body { margin: 0; padding: 0; }
 
 /* A4 per la stampa */
 .formato-a4 .loc-titolo { font-size: calc(var(--u) * 10); }
+
+.formato-quadrata .loc-info,
+.formato-a4 .loc-info { flex-direction: column; gap: calc(var(--u) * 2.2); }

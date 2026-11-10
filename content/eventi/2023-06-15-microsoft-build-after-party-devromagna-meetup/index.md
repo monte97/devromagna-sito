@@ -10,6 +10,7 @@ speakers:
   - "Nicola Iarocci"
 address: "Via Enrico Fermi, 13"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.373410,11.720875"
+end: 2023-06-15T21:00:00+02:00
 ---
 
 In questo Microsoft Build after party daremo una occhiata alle novità più importanti annunciate per l'ecosistema .NET. Nicola e Ugo faranno un riepilogo delle principali novità presentate, dopodichè ne parleremo tutti assieme.

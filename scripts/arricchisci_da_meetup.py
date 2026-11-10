@@ -14,6 +14,7 @@ import json
 import re
 import sys
 import urllib.request
+from datetime import date
 from pathlib import Path
 
 URL_FOTO = re.compile(r"^\s*https?://\S+\.(?:jpe?g|png|gif)\s*$", re.I)
@@ -38,6 +39,9 @@ def dati_meetup(html: str, event_id: str) -> dict:
         "address": sede.get("address"),
         "map_url": sede.get("googleMapsUrl"),
         "photo": foto.get("highResUrl"),
+        "host": sede.get("name"),
+        "city": sede.get("city"),
+        "end": ev.get("endTime"),
     }
 
 
@@ -69,6 +73,13 @@ def arricchisci(bundle: Path, pagine: Path, scarica: bool = False) -> list[str]:
         return []
     dati = dati_meetup(pagina.read_text(encoding="utf-8"), m.group(1))
     fatto = []
+    for campo in ("host", "city", "end"):
+        valore = dati.get(campo)
+        if campo == "host" and valore in ("Online event", dati.get("address")):
+            continue  # su Meetup a volte la "sede" è l'indirizzo o un evento online
+        if valore and not re.search(rf"^{campo}:", fm, re.M):
+            fm += f"\n{campo}: {valore if campo == 'end' else _yaml(valore)}"
+            fatto.append(campo)
     if dati.get("address") and not re.search(r"^address:", fm, re.M):
         fm += f"\naddress: {_yaml(dati['address'])}"
         fatto.append("address")
@@ -82,7 +93,10 @@ def arricchisci(bundle: Path, pagine: Path, scarica: bool = False) -> list[str]:
     if fatto:
         indice.write_text(f"---\n{fm}\n---\n\n{corpo.lstrip()}", encoding="utf-8")
     locandina = bundle / "locandina.jpg"
-    if scarica and dati.get("photo") and not locandina.exists():
+    data_evento = re.search(r"^date:\s*(\d{4}-\d{2}-\d{2})", fm, re.M)
+    futuro = bool(data_evento) and data_evento.group(1) >= date.today().isoformat()
+    # per le serate in arrivo la locandina è quella generata dal sito, non la copertina di Meetup
+    if scarica and not futuro and dati.get("photo") and not locandina.exists():
         req = urllib.request.Request(dati["photo"], headers={"User-Agent": "devromagna-sito"})
         locandina.write_bytes(urllib.request.urlopen(req, timeout=30).read())
         fatto.append("locandina")

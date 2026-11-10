@@ -6,6 +6,7 @@ abstract: "Partire da zero ed arrivare ad una versione giocabile di 2048 in due 
 meetup_url: "https://www.meetup.com/devromagna/events/273479126/"
 speakers:
   - "Giulio Cesare Solaroli"
+end: 2020-10-01T23:00:00+02:00
 ---
 
 Partire da zero ed arrivare ad una versione giocabile di 2048 in due ore imparando un nuovo linguaggio.

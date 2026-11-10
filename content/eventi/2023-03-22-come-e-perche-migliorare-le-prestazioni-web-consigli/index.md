@@ -8,6 +8,7 @@ meetup_url: "https://www.meetup.com/devromagna/events/291862771/"
 slides: "slide.pdf"
 address: "Viale Aurelio Saffi, 50/b"
 map_url: "https://www.google.com/maps/search/?api=1&query=44.351665,11.703611"
+end: 2023-03-22T19:30:00+01:00
 ---
 
 - Data: 22 Marzo 2023
