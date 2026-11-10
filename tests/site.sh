@@ -380,6 +380,14 @@ check_locandine() {
   # Bottone di download solo negli eventi in arrivo
   assert_contains "$OUT/eventi/2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire/index.html" "locandina.pdf"
   assert_not_contains "$OUT/eventi/2018-05-25-passato-nudo/index.html" "locandina.pdf"
+  # Nome del file scaricato: devromagna-<cartella dell'evento>, o nome_locandina se c'è
+  local ev
+  ev=$(tr -d '\n' < "$OUT/eventi/2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire/index.html")
+  grep -Eq 'download=["'"'"']?devromagna-2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire\.pdf' <<<"$ev" || fail "nome del PDF scaricato"
+  grep -Eq 'download=["'"'"']?devromagna-2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire-16x9\.png' <<<"$ev" || fail "nome del PNG 16:9 scaricato"
+  grep -Eq 'download=["'"'"']?devromagna-2026-11-12-argus-sbom-guard-gestione-delle-vulnerabilita-a-partire-quadrata\.png' <<<"$ev" || fail "nome del PNG quadrato scaricato"
+  ev=$(tr -d '\n' < "$OUT/eventi/2099-02-01-titolo-lunghissimo/index.html")
+  grep -Eq 'download=["'"'"']?serata-di-prova\.pdf' <<<"$ev" || fail "nome_locandina ignorato"
   # La pagina della locandina non finisce nella sitemap né nelle liste
   grep -q 'locandina.html' "$OUT/sitemap.xml" && fail "locandina nella sitemap"
   return 0

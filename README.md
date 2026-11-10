@@ -40,7 +40,7 @@ Per ogni evento in arrivo la pubblicazione genera da sola tre file, nella cartel
 - `locandina-quadrata.png` (1080×1080), per il post LinkedIn;
 - `locandina.pdf` (A4), per la stampa.
 
-Si scaricano dal bottone "Scarica la locandina" nella pagina dell'evento. Dentro ci sono titolo, speaker, data, ora, sede e città, e un QR code verso la pagina Meetup dell'evento (o del gruppo, se il link manca). Se una riga manca nel file dell'evento, sulla locandina non compare.
+Si scaricano dal bottone "Scarica la locandina" nella pagina dell'evento. Il file scaricato si chiama `devromagna-<cartella dell'evento>.pdf` (e `-16x9.png`, `-quadrata.png`); per un nome diverso aggiungi `nome_locandina: "..."` al frontmatter. Dentro ci sono titolo, speaker, data, ora, sede e città, e un QR code verso la pagina Meetup dell'evento (o del gruppo, se il link manca). Se una riga manca nel file dell'evento, sulla locandina non compare.
 
 Titolo troppo lungo? Si rimpicciolisce da solo; per una versione più corta solo sulla locandina, aggiungi `titolo_locandina: "..."` al frontmatter.
 

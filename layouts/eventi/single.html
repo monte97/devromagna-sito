@@ -41,9 +41,11 @@
           </div>
           {{ if eq $stato "in-arrivo" }}
             {{ with .Params.meetup_url }}<p class="evento-cta"><a class="btn" href="{{ . }}">Iscriviti su Meetup</a></p>{{ end }}
+            {{- /* nome dei file scaricati: nome_locandina dal frontmatter, se no devromagna-<cartella dell'evento> */ -}}
+            {{- $nome := .Params.nome_locandina | default (printf "devromagna-%s" .File.ContentBaseName) | urlize -}}
             <div class="evento-scarica">
-              <a class="btn btn-soft" href="{{ .RelPermalink }}locandina.pdf" download>Scarica la locandina (PDF)</a>
-              <p>Immagini per i social: <a href="{{ .RelPermalink }}locandina-16x9.png" download>16:9 per Meetup</a> · <a href="{{ .RelPermalink }}locandina-quadrata.png" download>quadrata per LinkedIn</a></p>
+              <a class="btn btn-soft" href="{{ .RelPermalink }}locandina.pdf" download="{{ $nome }}.pdf">Scarica la locandina (PDF)</a>
+              <p>Immagini per i social: <a href="{{ .RelPermalink }}locandina-16x9.png" download="{{ $nome }}-16x9.png">16:9 per Meetup</a> · <a href="{{ .RelPermalink }}locandina-quadrata.png" download="{{ $nome }}-quadrata.png">quadrata per LinkedIn</a></p>
             </div>
           {{ else }}
             {{ with .Params.attendees }}<p class="evento-presenti">{{ . }} presenti</p>{{ end }}
